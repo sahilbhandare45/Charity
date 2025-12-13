@@ -2,46 +2,188 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auti Foundation</title>
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auti Foundation</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="main">
-        <div class="nav">
-            <div class="nav-left">
-                <img src="./Assests/auti-logo-bg.png" alt="Logo" />
-            </div>
+  <div id="follower"></div>
+  <div class="main">
+    <div class="mouse-pointer"></div>
+    <div class="nav">
+      <div class="nav-left">
+        <img src="./Assests/auti-logo-bg.png" alt="Logo" />
+      </div>
 
-            <div class="nav-center">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Donation</a>
-                <div class="dropdown">
-                    <button class="dropbtn">Sections</button>
-                    <div class="dropdown-content">
-                        <a href="#">Causes</a>
-                        <a href="#">Blogs</a>
-                        <a href="#">Media Gallery</a>
-                    </div>
-                </div>
-                <a href="#">Contact Us</a>
-            </div>
-
-            <div class="nav-right">
-                <a href="#"><i class="ri-facebook-circle-fill"></i></a>
-                <a href="#"><i class="ri-twitter-x-line"></i></a>
-                <a href="#"><i class="ri-instagram-line"></i></a>
-            </div>
+      <div class="nav-center">
+        <a href="#">HOME</a>
+        <a href="#">ABOUT</a>
+        <a href="#">DONATION</a>
+        <div class="dropdown">
+          <button class="dropbtn">SECTIONS</button>
+          <div class="dropdown-content">
+            <a href="#">ABOUT US</a>
+            <a href="#">BLOGS</a>
+            <a href="#">MEDIA GALLERY</a>
+          </div>
         </div>
+        <a href="#">CONTACT US</a>
+      </div>
+
+      <div class="nav-right">
+        <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+        <a href="#"><i class="ri-twitter-x-line"></i></a>
+        <a href="#"><i class="ri-instagram-line"></i></a>
+      </div>
+    </div>
+    <div class="home-banner">
+      <div class="slider">
+        <div class="slides">
+          <div class="slide">
+            <img src="./Assests/banner1.jpeg" alt="">
+            <div class="overlay">
+              <h1>Together We Can Change Lives</h1>
+              <p>Your support brings hope to children with autism</p>
+              <button class="donate-btn">Donate Now</button>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="./Assests/banner2.jpeg" alt="">
+            <div class="overlay">
+              <h1>Every Child Deserves Care</h1>
+              <p>Your donation creates opportunities and inclusion</p>
+              <button class="donate-btn">Support Now</button>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="./Assests/banner3.jpeg" alt="">
+            <div class="overlay">
+              <h1>Support Auti Foundation Awareness</h1>
+              <p>Be the reason someone smiles today</p>
+              <button class="donate-btn">Join Us</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core Focus -->
+  <section class="core-focus">
+  <div class="container">
+
+    <div class="section-header">
+      <h2>Core Focus Areas</h2>
+      <p>Driving impact through education, entrepreneurship, health, and sustainability.</p>
+    </div>
+
+    <div class="focus-row">
+
+      <div class="focus-card animate">Education & Skills
+        <span>Scholarships, career guidance, digital literacy programs.</span>
+      </div>
+
+      <div class="focus-card animate">Entrepreneurship
+        <span>Business coaching for rural & small-town entrepreneurs.</span>
+      </div>
+
+      <div class="focus-card animate">Health & Wellness
+        <span>Medical aid, awareness camps, mental health sessions.</span>
+      </div>
+
+      <div class="focus-card animate">Women Empowerment
+        <span>Training women in financial independence & leadership.</span>
+      </div>
+
+      <div class="focus-card animate">Environment
+        <span>Tree plantation, waste management, eco-awareness.</span>
+      </div>
 
     </div>
+  </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-container">
+
+      <!-- LEFT SECTION -->
+      <div class="footer-left">
+        <h4>Contact Us</h4>
+
+        <p><i class="fas fa-envelope"></i> support@yourwebsite.com</p>
+        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+        <p><i class="fas fa-location-dot"></i> Mumbai, Maharashtra, India</p>
+
+        <h5>Business Hours</h5>
+        <p>Mon – Sat: 10:00 AM – 8:00 PM</p>
+        <p>Sunday: Closed</p>
+
+        <div class="feedback-box">
+          <input type="text" placeholder="Your feedback..." aria-label="Feedback">
+          <button>Submit</button>
+        </div>
+      </div>
+
+      <!-- MIDDLE SECTION -->
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#products">Donation</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- RIGHT SECTION -->
+      <div class="footer-right">
+        <h4>Find Us</h4>
+
+        <div class="map-box">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.775348501723!2d73.01406817394977!3d19.029618453429396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c3eaaa53c4e3%3A0x9459161291e7ded5!2sTerna%20Engineering%20College!5e0!3m2!1sen!2sin!4v1765611382637!5m2!1sen!2sin"
+            loading="lazy" allowfullscreen>
+          </iframe>
+        </div>
+
+
+        <div class="social-icons">
+          <span>Follow Us:</span>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FOOTER BOTTOM -->
+    <div class="footer-bottom">
+      <p>
+        © Auti Foundation |
+        <a href="#">Privacy Policy</a> |
+        <a href="#">Terms & Conditions</a>
+      </p>
+    </div>
+
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+  </footer>
+  <script src="script.js"></script>
 </body>
 
 </html>
