@@ -1,5 +1,3 @@
-const follower = document.querySelector('#follower')
-const slidesContainer = document.querySelector(".slides");
 const slides = document.querySelectorAll(".slide");
 let currentIndex = 0;
 const totalSlides = slides.length;
@@ -29,6 +27,9 @@ btn.addEventListener("click", () => {
 
 
 // Mouse Cursor
+
+const slidesContainer = document.querySelector(".slides");
+
 (function () {
   const follower = document.querySelector('#follower');
 
@@ -53,17 +54,3 @@ btn.addEventListener("click", () => {
 
   animate();
 })();
-
-
-/* core focus function */
-const cards = document.querySelectorAll('.focus-card');
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
-  });
-}, { threshold: 0.2 });
-
-cards.forEach(card => observer.observe(card));
