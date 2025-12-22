@@ -197,7 +197,7 @@ body {
 }
 
 .overlay h1 {
-  font-size: 42px;
+  font-size: 48px;
   font-weight: 800;
   letter-spacing: 3px;
   margin-bottom: 12px;
@@ -224,7 +224,7 @@ body {
   color: var(--white);
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   cursor: pointer;
   transition: var(--transition);
   animation: fadeUp 1.2s ease forwards;
@@ -399,6 +399,197 @@ body {
   cursor: pointer;
   display: none;
 }
+
+/* =========================
+   CORE FOCUS SECTION
+========================= */
+.core-focus-section {
+  padding: 80px 8%;
+  background: #f9fafb;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 60px;
+  color: #0b3d2e;
+}
+
+/* LAYOUT */
+.core-focus-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 420px 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* CONTENT BLOCKS */
+.focus-col {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.focus-item {
+  position: relative;
+}
+
+.focus-item h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.focus-item p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* NUMBER CIRCLE */
+.num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* COLORS */
+.blue { color: #1e2bd8; }
+.orange { color: #d17a00; }
+.pink { color: #ff4fa3; }
+.red { color: #ff2d2d; }
+.green { color: #00b050; }
+
+/* CENTER CIRCLE */
+.focus-circle {
+  position: relative;
+  width: 420px;
+  height: 420px;
+  margin: auto;
+}
+
+/* COLORED RING */
+.ring {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background:
+    conic-gradient(
+      #1e2bd8 0deg 72deg,
+      #ff4fa3 72deg 144deg,
+      #ff2d2d 144deg 216deg,
+      #00b050 216deg 288deg,
+      #ffb84d 288deg 360deg
+    );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  rotate: 285deg;
+}
+
+/* INNER WHITE CIRCLE */
+.circle-text {
+  position: absolute;
+  inset: 40px;  
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.circle-text h3 {
+  font-size: 35px;
+  color: #0b7a2f;
+  line-height: 1.3;
+}
+
+
+/* ENVIRONMENT CENTER */
+.environment-block {
+  margin: 80px auto 0;
+  max-width: 600px;
+  text-align: center;
+}
+
+.environment-block h3 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.environment-block p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .core-focus-wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .focus-col {
+    align-items: center;
+  }
+}
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+  }
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   ANIMATIONS FOCUS AREAS
+========================= */
+
+@media (max-width: 992px) {
+  .focus-row {
+    flex-wrap: wrap;
+  }
+
+  .focus-card {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .focus-card {
+    flex: 1 1 100%;
+  }
+}
+
+
+
 /* =========================
    INITIATIVES SECTION
 ========================= */
@@ -432,7 +623,7 @@ body {
   position: relative;
   background: #ffffff;
   border-radius: 16px;
-  overflow: hidden; /* IMPORTANT */
+  overflow: hidden;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
   transition:all ease-in-out 0.20s;
   box-shadow: 0 0 15px black;
@@ -547,31 +738,6 @@ body {
   opacity: 1;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 28px;
-  }
-
-  .overlay-title {
-    font-size: 22px;
-  }
-
-  .initiative-image {
-    height: 220px;
-  }
-}
-
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-  }
-}
-
 /* =========================
    ANIMATIONS
 ========================= */
@@ -585,7 +751,6 @@ body {
     transform: translateY(0);
   }
 }
-
 
 /* =========================
    ANIMATIONS FOCUS AREAS
@@ -606,3 +771,400 @@ body {
     flex: 1 1 100%;
   }
 }
+
+/* =========================
+   RESPONSIVE – LARGE TABLETS & SMALL DESKTOPS
+========================= */
+@media (max-width: 1200px) {
+  .nav {
+    padding: 0 30px;
+  }
+
+  .overlay h1 {
+    font-size: 40px;
+  }
+
+  .overlay p {
+    font-size: 15px;
+  }
+
+  .slider {
+    height: 480px;
+  }
+}
+
+/* =========================
+   RESPONSIVE – TABLETS
+========================= */
+@media (max-width: 992px) {
+
+  #follower{
+    visibility: hidden;
+  }
+
+  .nav {
+    height: auto;
+    padding: 15px 25px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .nav-center {
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .home-banner {
+    flex-direction: column;
+  }
+
+  .slider {
+    height: 420px;
+  }
+
+  .overlay {
+    padding-left: 40px;
+  }
+
+  .overlay h1 {
+    font-size: 34px;
+  }
+
+  .overlay p {
+    max-width: 420px;
+  }
+
+  .short-info {
+    padding: 60px 40px;
+  }
+
+  .footer-container {
+    flex-wrap: wrap;
+  }
+}
+
+/* =========================
+   RESPONSIVE – MOBILE DEVICES
+========================= */
+@media (max-width: 768px) {
+
+  #follower{
+    visibility: hidden;
+  }
+
+  .nav {
+    padding: 15px 20px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nav-left img {
+    height: 55px;
+  }
+
+  .nav-center {
+    gap: 18px;
+  }
+
+  .nav-center a {
+    font-size: 12px;
+  }
+
+  .nav-right {
+    justify-content: center;
+  }
+
+  .slider {
+    height: 350px;
+  }
+
+  .overlay {
+    padding: 20px;
+  }
+
+  .overlay h1 {
+    font-size: 26px;
+    letter-spacing: 2px;
+  }
+
+  .overlay p {
+    font-size: 14px;
+  }
+
+  .donate-btn {
+    padding: 10px 22px;
+    font-size: 13px;
+  }
+
+  .short-info {
+    padding: 50px 25px;
+    text-align: center;
+  }
+
+  .short-info p {
+    text-align: center;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .map-box {
+    height: 180px;
+  }
+}
+
+/* =========================
+   RESPONSIVE – SMALL MOBILES
+========================= */
+@media (max-width: 576px) {
+
+  #follower{
+    visibility: hidden;
+  }
+
+  .slider {
+    height: 280px;
+  }
+
+  .overlay h1 {
+    font-size: 22px;
+  }
+
+  .overlay p {
+    font-size: 13px;
+  }
+
+  .initiative-image {
+    height: 200px;
+  }
+
+  .overlay-title {
+    font-size: 20px;
+  }
+
+  .initiative-content p {
+    font-size: 14px;
+  }
+
+  .initiative-content button {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  #backToTop {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+/* =========================
+   RESPONSIVE – EXTRA SMALL DEVICES
+========================= */
+@media (max-width: 420px) {
+
+  #follower{
+    visibility: hidden;
+  }
+  
+  .nav-center {
+    gap: 12px;
+  }
+
+  .nav-center a {
+    font-size: 11px;
+  }
+
+  .overlay h1 {
+    font-size: 20px;
+  }
+
+  .donate-btn {
+    padding: 8px 18px;
+  }
+
+  .footer {
+    padding: 40px 15px 15px;
+  }
+
+  .footer-bottom {
+    font-size: 0.75rem;
+  }
+}
+
+/* =========================
+   RESPONSIVE – SHORT INFO
+========================= */
+/* Tablets */
+@media (max-width: 992px) {
+  .short-info {
+    padding: 60px 40px;
+  }
+
+  .short-info h1 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .short-info p {
+    font-size: 15px;
+    text-align: justify;
+  }
+
+  .short-info a {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .short-info {
+    padding: 50px 25px;
+  }
+
+  .short-info h1 {
+    font-size: 28px;
+    letter-spacing: 1.5px;
+  }
+
+  .short-info p {
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: justify;
+  }
+
+  .short-info button {
+    font-size: 14px;
+    padding: 12px 24px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 576px) {
+  .short-info {
+    padding: 40px 18px;
+  }
+
+  .short-info h1 {
+    font-size: 24px;
+  }
+
+  .short-info p {
+    font-size: 13.5px;
+  }
+
+  .short-info button {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 420px) {
+  .short-info h1 {
+    font-size: 22px;
+  }
+
+  .short-info p {
+    font-size: 13px;
+  }
+
+  .short-info button {
+    font-size: 13px;
+    padding: 10px 20px;
+  }
+}
+
+/* =========================
+   INITIATIVE – MOBILE FIX
+========================= */
+@media (hover: none) and (pointer: coarse) {
+  .initiative-content p {
+    opacity: 1;
+  }
+
+  .initiative-content button {
+    opacity: 1;
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .initiative-card:hover .initiative-content p {
+    opacity: 1;
+  }
+
+  .initiative-card:hover .initiative-content button {
+    opacity: 1;
+  }
+}
+
+/* =========================
+   HAMBURGER MENU
+========================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+  }
+
+  .nav-center {
+    width: 100%;
+    flex-direction: column;
+    background: var(--primary);
+    position: absolute;
+    top: 90px;
+    left: 0;
+    padding: 20px 0;
+    gap: 20px;
+    display: none;
+  }
+
+  .nav-center.active {
+    display: flex;
+  }
+
+  .nav-right {
+    display: none;
+  }
+}
+
+/* =========================
+   HAMBURGER ANIMATION
+========================= */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,22 +8,26 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
   <div id="follower"></div>
   <main>
-    <div class="mouse-pointer"></div>
     <div class="nav">
+      <div class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
       <div class="nav-left">
         <img src="./Assests/auti-logo-bg.png" alt="Logo" />
       </div>
 
       <div class="nav-center">
-        <a href="#">HOME</a>
+        <a href="">HOME</a>
         <a href="#">ABOUT</a>
-        <a href="#">DONATION</a>
-        <a href="#">MEDIA GALLERY</a>
-        <a href="#">CONTACT US</a>
+        <a href="./pages/donation.html">DONATION</a>
+        <a href="./pages/media-gallery.html">MEDIA GALLERY</a>
+        <a href="./pages/contactus.html">CONTACT US</a>
       </div>
 
       <div class="nav-right">
@@ -40,7 +43,7 @@
             <img src="./Assests/banner1.jpeg" alt="">
             <div class="overlay">
               <h1>Together We Can Change Lives</h1>
-              <p>Your support brings hope to children with autism</p>
+              <p>Your support brings hope to children with auti foundation</p>
               <button class="donate-btn">Donate Now</button>
             </div>
           </div>
@@ -79,6 +82,79 @@
         building a better society.</p>
       <a href="#"><button>Read More...</button></a>
     </div>
+    <!-- CORE FOCUS AREA  -->
+    <section class="core-focus-section">
+  <h2 class="section-title">Core Focus Areas</h2>
+
+  <div class="core-focus-wrapper">
+
+    <!-- LEFT CONTENT -->
+    <div class="focus-col left">
+      <div class="focus-item blue">
+        <span class="num">1</span>
+        <h3>Education & Skill Development</h3>
+        <p>
+          Providing scholarships, career guidance, and digital literacy programs
+          to help children and youth build a strong future.
+        </p>
+      </div>
+
+      <div class="focus-item orange">
+        <span class="num">2</span>
+        <h3>Entrepreneurship Development</h3>
+        <p>
+          Offering business coaching and mentorship to rural and small-town
+          entrepreneurs to promote sustainable livelihoods.
+        </p>
+      </div>
+    </div>
+
+    <!-- CENTER CIRCLE -->
+    <div class="focus-circle">
+      <div class="ring">
+        <span class="seg blue"></span>
+        <span class="seg pink"></span>
+        <span class="seg red"></span>
+        <span class="seg green"></span>
+        <span class="seg orange"></span>
+      </div>
+      <div class="circle-text">
+        <h3>Our<br>Stratergic<br>Pillars</h3>
+      </div>
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="focus-col right">
+      <div class="focus-item pink">
+        <span class="num">3</span>
+        <h3>Women Empowerment</h3>
+        <p>
+          Training women in financial independence, leadership skills,
+          and entrepreneurship to create confident change-makers.
+        </p>
+      </div>
+
+      <div class="focus-item red">
+        <span class="num">4</span>
+        <h3>Health & Wellness</h3>
+        <p>
+          Organizing medical aid programs, health awareness camps,
+          and mental wellness sessions for communities.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENVIRONMENT CENTERED -->
+  <div class="environment-block green">
+    <span class="num">5</span>
+    <h3>Environmental Sustainability</h3>
+    <p>
+      Driving eco-friendly initiatives such as tree plantation,
+      waste management, and environmental awareness campaigns.
+    </p>
+  </div>
+</section>
 
     <section id="initiatives" class="initiatives-section">
       <div class="container">
@@ -106,7 +182,7 @@
               <p>
                Providing educational support and resources to children from low-income families.
               </p>
-              <button>Donate Now</button>
+              <a href="./pages/donation.html"><button>Donate Now</button></a>
             </div>
 
           </div>
@@ -128,7 +204,7 @@
               <p>
               Driving environmental sustainability through tree plantation initiatives across Maharashtra.
               </p>
-              <button>Donate Now</button>
+              <a href="./pages/donation.html"><button>Donate Now</button></a>
             </div>
 
           </div>
@@ -150,7 +226,7 @@
               <p>
                Empowering women with skills, training, and opportunities for economic independence.
               </p>
-              <button>Donate Now</button>
+              <a href="./pages/donation.html"><button>Donate Now</button></a>
             </div>
 
           </div>
@@ -172,7 +248,7 @@
               <p>
                 Supporting MSMEs and startups with accessible business training and mentorship.
               </p>
-              <button>Donate Now</button>
+              <a href="./pages/donation.html"><button>Donate Now</button></a>
             </div>
 
           </div>
@@ -194,7 +270,7 @@
               <p>
                 Promoting community well-being through health, donation, and senior citizen support programs.
               </p>
-              <button>Donate Now</button>
+              <a href="./pages/donation.html"><button>Donate Now</button></a>
             </div>
 
           </div>
@@ -243,9 +319,7 @@
           <h4>Find Us</h4>
 
           <div class="map-box">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.775348501723!2d73.01406817394977!3d19.029618453429396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c3eaaa53c4e3%3A0x9459161291e7ded5!2sTerna%20Engineering%20College!5e0!3m2!1sen!2sin!4v1765611382637!5m2!1sen!2sin"
-              loading="lazy" allowfullscreen>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d276.5948208404576!2d73.75850341429336!3d18.595949088625357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9001ebd5b9d%3A0xeb203166054165a0!2sLaxmi%20Avenue%20Commercial%20Tower!5e1!3m2!1sen!2sin!4v1765868443447!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </iframe>
           </div>
 

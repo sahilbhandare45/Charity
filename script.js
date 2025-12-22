@@ -54,3 +54,12 @@ const slidesContainer = document.querySelector(".slides");
 
   animate();
 })();
+
+
+const hamburger = document.getElementById("hamburger");
+  const navCenter = document.querySelector(".nav-center");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navCenter.classList.toggle("active");
+  });

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Auti Foundation</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#f4f6f5;
+  color:#333;
+}
+
+/* HEADER */
+header{
+  background:#0e523d;
+  color:#fff;
+  padding:70px 20px;
+  text-align:center;
+}
+
+header h1{
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+header p{
+  opacity:0.9;
+}
+
+/* GALLERY */
+.gallery-wrapper{
+  max-width:1200px;
+  margin:50px auto;
+  padding:0 20px;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
+  gap:22px;
+}
+
+.gallery-item{
+  position:relative;
+  border-radius:14px;
+  overflow:hidden;
+  cursor:pointer;
+  background:#000;
+}
+
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform 0.5s ease;
+}
+
+/* Hover Overlay */
+
+.gallery-item:hover img{
+  transform:scale(1.1);
+}
+
+.gallery-item:hover::after{
+  opacity:1;
+}
+
+/* LIGHTBOX */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.92);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:12px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.6);
+}
+
+.lightbox .close{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:40px;
+  color:#fff;
+  cursor:pointer;
+  user-select:none;
+}
+
+.lightbox .nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:50px;
+  color:#fff;
+  cursor:pointer;
+  user-select:none;
+  padding:10px;
+}
+
+.lightbox .prev{ left:20px; }
+.lightbox .next{ right:20px; }
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  header h1{ font-size:28px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Our Gallery</h1>
+  <p>Moments of impact, hope, and change</p>
+</header>
+
+<section class="gallery-wrapper">
+  <div class="gallery">
+
+    <!-- IMAGE 1 -->
+    <div class="gallery-item">
+      <img src="../Assests/img1.jpeg" alt="Gallery Image">
+    </div>
+
+    <!-- IMAGE 2 -->
+    <div class="gallery-item">
+      <img src="../Assests/img2.jpeg" alt="Gallery Image">
+    </div>
+
+    <!-- IMAGE 3 -->
+    <div class="gallery-item">
+      <img src="../Assests/img3.jpeg" alt="Gallery Image">
+    </div>
+
+    <!-- IMAGE 4 -->
+    <div class="gallery-item">
+      <img src="../Assests/img4.jpeg" alt="Gallery Image">
+    </div>
+
+    <!-- IMAGE 5 -->
+    <div class="gallery-item">
+      <img src="../Assests/img5.jpeg" alt="Gallery Image">
+    </div>
+
+    <!-- IMAGE 6 -->
+    <div class="gallery-item">
+      <img src="../Assests/img6.jpeg" alt="Gallery Image">
+    </div>
+
+    <!-- IMAGE 7 -->
+    <div class="gallery-item">
+      <img src="../Assests/img7.jpeg" alt="Gallery Image">
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="close" id="close">&times;</span>
+  <span class="nav prev" id="prev">&#10094;</span>
+  <img id="lightbox-img">
+  <span class="nav next" id="next">&#10095;</span>
+</div>
+
+<script>
+const images = document.querySelectorAll(".gallery-item img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.getElementById("close");
+const nextBtn = document.getElementById("next");
+const prevBtn = document.getElementById("prev");
+
+let currentIndex = 0;
+
+// Open lightbox
+images.forEach((img, index) => {
+  img.addEventListener("click", () => {
+    currentIndex = index;
+    showImage();
+    lightbox.style.display = "flex";
+  });
+});
+
+function showImage(){
+  lightboxImg.src = images[currentIndex].src;
+}
+
+// Close
+closeBtn.onclick = () => lightbox.style.display = "none";
+
+// Next / Prev
+nextBtn.onclick = () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  showImage();
+};
+
+prevBtn.onclick = () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  showImage();
+};
+
+// Close on background click
+lightbox.onclick = e => {
+  if(e.target === lightbox){
+    lightbox.style.display = "none";
+  }
+};
+
+// Keyboard navigation
+document.addEventListener("keydown", e => {
+  if(lightbox.style.display === "flex"){
+    if(e.key === "Escape") lightbox.style.display = "none";
+    if(e.key === "ArrowRight") nextBtn.click();
+    if(e.key === "ArrowLeft") prevBtn.click();
+  }
+});
+</script>
+
+</body>
+</html>
