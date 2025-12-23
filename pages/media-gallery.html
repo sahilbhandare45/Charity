@@ -6,229 +6,308 @@
 <title>Gallery | Auti Foundation</title>
 
 <style>
+:root{
+  --green:#0e523d;
+  --green-soft:#eef5f2;
+  --dark:#0f172a;
+  --gray:#6b7280;
+  --border:#e5e7eb;
+  --radius:18px;
+}
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
 }
 
 body{
-  background:#f4f6f5;
-  color:#333;
+  background:#ffffff;
+  color:var(--dark);
+  line-height:1.7;
 }
 
-/* HEADER */
-header{
-  background:#0e523d;
+/* HERO */
+#gallery-hero{
+  padding:40px 8vw 70px;
+  background-color: var(--green);
+  margin-bottom: 10px;
+}
+
+#gallery-hero h1{
+  font-size:clamp(40px,5vw,60px);
+  font-weight:700;
+  margin-bottom:14px;
+  color: white;
+}
+
+#gallery-hero p{
+  max-width:760px;
+  font-size:18px;
+  color:var(--border);
+}
+
+/* FILTER BAR */
+#gallery-filter{
+  position:sticky;
+  top:0;
+  background:#ffffff;
+  z-index:50;
+  border-bottom:1px solid var(--border);
+}
+
+#filter-wrapper{
+  max-width:1200px;
+  margin:0 auto;
+  padding:16px 8vw;
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.filter-btn{
+  padding:8px 18px;
+  border-radius:40px;
+  border:1px solid var(--green);
+  background:#fff;
+  font-size:14px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover{
+  background:var(--green);
   color:#fff;
-  padding:70px 20px;
-  text-align:center;
-}
-
-header h1{
-  font-size:38px;
-  margin-bottom:10px;
-}
-
-header p{
-  opacity:0.9;
+  border-color:var(--green);
 }
 
 /* GALLERY */
-.gallery-wrapper{
+#gallery-section{
+  padding:70px 8vw;
+}
+
+#gallery-wrapper{
   max-width:1200px;
-  margin:50px auto;
-  padding:0 20px;
+  margin:0 auto;
 }
 
-.gallery{
+#gallery-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
-  gap:22px;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:30px;
 }
 
+/* ITEM */
 .gallery-item{
   position:relative;
-  border-radius:14px;
+  border-radius:var(--radius);
   overflow:hidden;
+  background:#f3f4f6;
   cursor:pointer;
-  background:#000;
 }
 
 .gallery-item img{
   width:100%;
   height:100%;
   object-fit:cover;
-  transition:transform 0.5s ease;
+  transition:transform .6s ease;
 }
-
-/* Hover Overlay */
 
 .gallery-item:hover img{
-  transform:scale(1.1);
+  transform:scale(1.07);
 }
 
-.gallery-item:hover::after{
+/* CAPTION */
+.gallery-caption{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,transparent,rgba(0,0,0,.65));
+  display:flex;
+  align-items:flex-end;
+  padding:18px;
+  color:#fff;
+  font-size:14px;
+  opacity:0;
+  transition:.4s;
+}
+
+.gallery-item:hover .gallery-caption{
   opacity:1;
 }
 
 /* LIGHTBOX */
-.lightbox{
+#lightbox{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.92);
+  background:rgba(0,0,0,.92);
   display:none;
   align-items:center;
   justify-content:center;
   z-index:1000;
 }
 
-.lightbox img{
+#lightbox-img{
   max-width:90%;
   max-height:90%;
-  border-radius:12px;
-  box-shadow:0 20px 60px rgba(0,0,0,0.6);
+  border-radius:14px;
 }
 
-.lightbox .close{
+.lightbox-close{
   position:absolute;
-  top:20px;
-  right:30px;
-  font-size:40px;
+  top:24px;
+  right:32px;
+  font-size:36px;
   color:#fff;
   cursor:pointer;
-  user-select:none;
 }
 
-.lightbox .nav{
+.lightbox-nav{
   position:absolute;
   top:50%;
   transform:translateY(-50%);
-  font-size:50px;
+  font-size:48px;
   color:#fff;
   cursor:pointer;
   user-select:none;
-  padding:10px;
 }
 
-.lightbox .prev{ left:20px; }
-.lightbox .next{ right:20px; }
+#lightbox-prev{ left:24px; }
+#lightbox-next{ right:24px; }
 
 /* RESPONSIVE */
 @media(max-width:600px){
-  header h1{ font-size:28px; }
+  #gallery-hero{
+    padding:80px 6vw 50px;
+  }
+  #gallery-section{
+    padding:60px 6vw;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Our Gallery</h1>
-  <p>Moments of impact, hope, and change</p>
+<!-- HERO -->
+<header id="gallery-hero">
+  <h1>Our Impact in Action</h1>
+  <p>
+    Every image tells a story of empowerment, resilience, and community transformation
+    driven by Auti Foundation across education, health, livelihoods, and sustainability.
+  </p>
 </header>
 
-<section class="gallery-wrapper">
-  <div class="gallery">
+<!-- FILTER -->
+<nav id="gallery-filter">
+  <div id="filter-wrapper">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="education">Education</button>
+    <button class="filter-btn" data-filter="women">Women Empowerment</button>
+    <button class="filter-btn" data-filter="health">Health</button>
+    <button class="filter-btn" data-filter="environment">Environment</button>
+    <button class="filter-btn" data-filter="community">Community</button>
+  </div>
+</nav>
 
-    <!-- IMAGE 1 -->
-    <div class="gallery-item">
-      <img src="../Assests/img1.jpeg" alt="Gallery Image">
-    </div>
+<!-- GALLERY -->
+<section id="gallery-section">
+  <div id="gallery-wrapper">
+    <div id="gallery-grid">
 
-    <!-- IMAGE 2 -->
-    <div class="gallery-item">
-      <img src="../Assests/img2.jpeg" alt="Gallery Image">
-    </div>
+      <div class="gallery-item" data-category="education">
+        <img src="../Assests/img1.jpeg" alt="">
+        <div class="gallery-caption">Education & Skill Development Program</div>
+      </div>
 
-    <!-- IMAGE 3 -->
-    <div class="gallery-item">
-      <img src="../Assests/img3.jpeg" alt="Gallery Image">
-    </div>
+      <div class="gallery-item" data-category="women">
+        <img src="../Assests/img2.jpeg" alt="">
+        <div class="gallery-caption">Women Entrepreneurship Training</div>
+      </div>
 
-    <!-- IMAGE 4 -->
-    <div class="gallery-item">
-      <img src="../Assests/img4.jpeg" alt="Gallery Image">
-    </div>
+      <div class="gallery-item" data-category="health">
+        <img src="../Assests/img3.jpeg" alt="">
+        <div class="gallery-caption">Community Health Awareness Camp</div>
+      </div>
 
-    <!-- IMAGE 5 -->
-    <div class="gallery-item">
-      <img src="../Assests/img5.jpeg" alt="Gallery Image">
-    </div>
+      <div class="gallery-item" data-category="environment">
+        <img src="../Assests/img4.jpeg" alt="">
+        <div class="gallery-caption">Tree Plantation & Clean-up Drive</div>
+      </div>
 
-    <!-- IMAGE 6 -->
-    <div class="gallery-item">
-      <img src="../Assests/img6.jpeg" alt="Gallery Image">
-    </div>
+      <div class="gallery-item" data-category="community">
+        <img src="../Assests/img5.jpeg" alt="">
+        <div class="gallery-caption">Community Engagement Activity</div>
+      </div>
 
-    <!-- IMAGE 7 -->
-    <div class="gallery-item">
-      <img src="../Assests/img7.jpeg" alt="Gallery Image">
+      <div class="gallery-item" data-category="education">
+        <img src="../Assests/img6.jpeg" alt="">
+        <div class="gallery-caption">Youth Career Guidance Session</div>
+      </div>
+
+      <div class="gallery-item" data-category="community">
+        <img src="../Assests/img7.jpeg" alt="">
+        <div class="gallery-caption">Grassroots Community Outreach</div>
+      </div>
+
     </div>
   </div>
 </section>
 
 <!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-  <span class="close" id="close">&times;</span>
-  <span class="nav prev" id="prev">&#10094;</span>
+<div id="lightbox">
+  <span class="lightbox-close" id="lightbox-close">&times;</span>
+  <span class="lightbox-nav" id="lightbox-prev">&#10094;</span>
   <img id="lightbox-img">
-  <span class="nav next" id="next">&#10095;</span>
+  <span class="lightbox-nav" id="lightbox-next">&#10095;</span>
 </div>
 
 <script>
+const items = document.querySelectorAll(".gallery-item");
+const buttons = document.querySelectorAll(".filter-btn");
 const images = document.querySelectorAll(".gallery-item img");
+
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
-const closeBtn = document.getElementById("close");
-const nextBtn = document.getElementById("next");
-const prevBtn = document.getElementById("prev");
+const closeBtn = document.getElementById("lightbox-close");
+const nextBtn = document.getElementById("lightbox-next");
+const prevBtn = document.getElementById("lightbox-prev");
 
+let visibleImages = [];
 let currentIndex = 0;
 
-// Open lightbox
-images.forEach((img, index) => {
-  img.addEventListener("click", () => {
-    currentIndex = index;
-    showImage();
-    lightbox.style.display = "flex";
+/* FILTER */
+buttons.forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    buttons.forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filter = btn.dataset.filter;
+    visibleImages = [];
+
+    items.forEach(item=>{
+      const show = filter==="all" || item.dataset.category===filter;
+      item.style.display = show ? "block" : "none";
+      if(show) visibleImages.push(item.querySelector("img"));
+    });
   });
 });
 
-function showImage(){
-  lightboxImg.src = images[currentIndex].src;
-}
-
-// Close
-closeBtn.onclick = () => lightbox.style.display = "none";
-
-// Next / Prev
-nextBtn.onclick = () => {
-  currentIndex = (currentIndex + 1) % images.length;
-  showImage();
-};
-
-prevBtn.onclick = () => {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  showImage();
-};
-
-// Close on background click
-lightbox.onclick = e => {
-  if(e.target === lightbox){
-    lightbox.style.display = "none";
-  }
-};
-
-// Keyboard navigation
-document.addEventListener("keydown", e => {
-  if(lightbox.style.display === "flex"){
-    if(e.key === "Escape") lightbox.style.display = "none";
-    if(e.key === "ArrowRight") nextBtn.click();
-    if(e.key === "ArrowLeft") prevBtn.click();
-  }
+/* LIGHTBOX */
+images.forEach((img)=>{
+  img.addEventListener("click",()=>{
+    visibleImages = Array.from(images).filter(i=>i.closest(".gallery-item").style.display!=="none");
+    currentIndex = visibleImages.indexOf(img);
+    lightboxImg.src = img.src;
+    lightbox.style.display="flex";
+  });
 });
+
+nextBtn.onclick=()=>{currentIndex=(currentIndex+1)%visibleImages.length;lightboxImg.src=visibleImages[currentIndex].src;}
+prevBtn.onclick=()=>{currentIndex=(currentIndex-1+visibleImages.length)%visibleImages.length;lightboxImg.src=visibleImages[currentIndex].src;}
+closeBtn.onclick=()=>lightbox.style.display="none";
+lightbox.onclick=e=>{if(e.target===lightbox)lightbox.style.display="none";}
 </script>
 
 </body>

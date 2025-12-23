@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +9,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div id="follower"></div>
   <main>
+    <!-- Navbar -->
     <div class="nav">
       <div class="hamburger" id="hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
       <div class="nav-left">
         <img src="./Assests/auti-logo-bg.png" alt="Logo" />
@@ -24,7 +27,7 @@
 
       <div class="nav-center">
         <a href="">HOME</a>
-        <a href="#">ABOUT</a>
+        <a href="./pages/about-us.html">ABOUT</a>
         <a href="./pages/donation.html">DONATION</a>
         <a href="./pages/media-gallery.html">MEDIA GALLERY</a>
         <a href="./pages/contactus.html">CONTACT US</a>
@@ -36,39 +39,49 @@
         <a href="#"><i class="ri-instagram-line"></i></a>
       </div>
     </div>
+
+    <!-- Hero Section -->
     <div class="home-banner">
       <div class="slider">
         <div class="slides">
+
           <div class="slide">
-            <img src="./Assests/banner1.jpeg" alt="">
+            <img src="./Assests/banner1.jpeg" alt="Community support initiative">
             <div class="overlay">
-              <h1>Together We Can Change Lives</h1>
-              <p>Your support brings hope to children with auti foundation</p>
-              <button class="donate-btn">Donate Now</button>
+              <div class="hero-content">
+                <h1>Together, We Can Change Lives</h1>
+                <p>Your support brings hope, dignity, and opportunity to communities supported by Auti Foundation.</p>
+                <a href="donate.html" class="donate-btn">Donate Now</a>
+              </div>
             </div>
           </div>
 
           <div class="slide">
-            <img src="./Assests/banner2.jpeg" alt="">
+            <img src="./Assests/banner2.jpeg" alt="Child care and education">
             <div class="overlay">
-              <h1>Every Child Deserves Care</h1>
-              <p>Your donation creates opportunities and inclusion</p>
-              <button class="donate-btn">Support Now</button>
+              <div class="hero-content">
+                <h1>Every Child Deserves Care</h1>
+                <p>Your contribution helps create inclusive learning and growth opportunities.</p>
+                <a href="donate.html" class="donate-btn">Support Our Work</a>
+              </div>
             </div>
           </div>
 
           <div class="slide">
-            <img src="./Assests/banner3.jpeg" alt="">
+            <img src="./Assests/banner3.jpeg" alt="Awareness and inclusion drive">
             <div class="overlay">
-              <h1>Support Auti Foundation Awareness</h1>
-              <p>Be the reason someone smiles today</p>
-              <button class="donate-btn">Join Us</button>
+              <div class="hero-content">
+                <h1>Be a Part of the Change</h1>
+                <p>Together, we can build awareness, compassion, and a better tomorrow.</p>
+                <a href="donate.html" class="donate-btn">Join Us</a>
+              </div>
             </div>
           </div>
 
         </div>
       </div>
     </div>
+
     <!-- Short Info Section -->
     <div class="short-info">
       <h1>AUTI FOUNDATION</h1>
@@ -80,81 +93,82 @@
         individuals, and nurturing self-reliance with dignity. Through impactful programs and initiatives, the
         foundation strives to inspire future generations to grow with values, responsibility, and a commitment to
         building a better society.</p>
-      <a href="#"><button>Read More...</button></a>
+      <a href="./pages/about-us.html"><button>Read More...</button></a>
     </div>
+
     <!-- CORE FOCUS AREA  -->
     <section class="core-focus-section">
-  <h2 class="section-title">Core Focus Areas</h2>
+      <h2 class="section-title">Core Focus Areas</h2>
 
-  <div class="core-focus-wrapper">
+      <div class="core-focus-wrapper">
 
-    <!-- LEFT CONTENT -->
-    <div class="focus-col left">
-      <div class="focus-item blue">
-        <span class="num">1</span>
-        <h3>Education & Skill Development</h3>
+        <!-- LEFT CONTENT -->
+        <div class="focus-col left">
+          <div class="focus-item blue">
+            <span class="num">1</span>
+            <h3>Education & Skill Development</h3>
+            <p>
+              Providing scholarships, career guidance, and digital literacy programs
+              to help children and youth build a strong future.
+            </p>
+          </div>
+
+          <div class="focus-item orange">
+            <span class="num">2</span>
+            <h3>Entrepreneurship Development</h3>
+            <p>
+              Offering business coaching and mentorship to rural and small-town
+              entrepreneurs to promote sustainable livelihoods.
+            </p>
+          </div>
+        </div>
+
+        <!-- CENTER CIRCLE -->
+        <div class="focus-circle">
+          <div class="ring">
+            <span class="seg blue"></span>
+            <span class="seg pink"></span>
+            <span class="seg red"></span>
+            <span class="seg green"></span>
+            <span class="seg orange"></span>
+          </div>
+          <div class="circle-text">
+            <h3>Our<br>Stratergic<br>Pillars</h3>
+          </div>
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="focus-col right">
+          <div class="focus-item pink">
+            <span class="num">3</span>
+            <h3>Women Empowerment</h3>
+            <p>
+              Training women in financial independence, leadership skills,
+              and entrepreneurship to create confident change-makers.
+            </p>
+          </div>
+
+          <div class="focus-item red">
+            <span class="num">4</span>
+            <h3>Health & Wellness</h3>
+            <p>
+              Organizing medical aid programs, health awareness camps,
+              and mental wellness sessions for communities.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENVIRONMENT CENTERED -->
+      <div class="environment-block green">
+        <span class="num">5</span>
+        <h3>Environmental Sustainability</h3>
         <p>
-          Providing scholarships, career guidance, and digital literacy programs
-          to help children and youth build a strong future.
+          Driving eco-friendly initiatives such as tree plantation,
+          waste management, and environmental awareness campaigns.
         </p>
       </div>
-
-      <div class="focus-item orange">
-        <span class="num">2</span>
-        <h3>Entrepreneurship Development</h3>
-        <p>
-          Offering business coaching and mentorship to rural and small-town
-          entrepreneurs to promote sustainable livelihoods.
-        </p>
-      </div>
-    </div>
-
-    <!-- CENTER CIRCLE -->
-    <div class="focus-circle">
-      <div class="ring">
-        <span class="seg blue"></span>
-        <span class="seg pink"></span>
-        <span class="seg red"></span>
-        <span class="seg green"></span>
-        <span class="seg orange"></span>
-      </div>
-      <div class="circle-text">
-        <h3>Our<br>Stratergic<br>Pillars</h3>
-      </div>
-    </div>
-
-    <!-- RIGHT CONTENT -->
-    <div class="focus-col right">
-      <div class="focus-item pink">
-        <span class="num">3</span>
-        <h3>Women Empowerment</h3>
-        <p>
-          Training women in financial independence, leadership skills,
-          and entrepreneurship to create confident change-makers.
-        </p>
-      </div>
-
-      <div class="focus-item red">
-        <span class="num">4</span>
-        <h3>Health & Wellness</h3>
-        <p>
-          Organizing medical aid programs, health awareness camps,
-          and mental wellness sessions for communities.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ENVIRONMENT CENTERED -->
-  <div class="environment-block green">
-    <span class="num">5</span>
-    <h3>Environmental Sustainability</h3>
-    <p>
-      Driving eco-friendly initiatives such as tree plantation,
-      waste management, and environmental awareness campaigns.
-    </p>
-  </div>
-</section>
+    </section>
 
     <section id="initiatives" class="initiatives-section">
       <div class="container">
@@ -180,7 +194,7 @@
             <!-- Card Content -->
             <div class="initiative-content">
               <p>
-               Providing educational support and resources to children from low-income families.
+                Providing educational support and resources to children from low-income families.
               </p>
               <a href="./pages/donation.html"><button>Donate Now</button></a>
             </div>
@@ -202,7 +216,7 @@
             <!-- Card Content -->
             <div class="initiative-content">
               <p>
-              Driving environmental sustainability through tree plantation initiatives across Maharashtra.
+                Driving environmental sustainability through tree plantation initiatives across Maharashtra.
               </p>
               <a href="./pages/donation.html"><button>Donate Now</button></a>
             </div>
@@ -224,7 +238,7 @@
             <!-- Card Content -->
             <div class="initiative-content">
               <p>
-               Empowering women with skills, training, and opportunities for economic independence.
+                Empowering women with skills, training, and opportunities for economic independence.
               </p>
               <a href="./pages/donation.html"><button>Donate Now</button></a>
             </div>
@@ -279,6 +293,90 @@
       </div>
     </section>
 
+    <section class="founders-section">
+      <div class="founders-title-wrap">
+    <h2 class="founders-title">Our Founders</h2>
+    <p class="founders-subtitle">
+      Visionary leaders driving purpose, empowerment, and long-term social impact
+    </p>
+  </div>
+  <!-- FOUNDER 1 -->
+  <div class="founder-row bg-light-green">
+    <div class="founder-text">
+
+      <h3 class="founder-name">Dilip Auti</h3>
+      <p class="founder-role">
+        International Business Strategist <br>
+        Business Growth Coach for MSMEs & SMEs
+      </p>
+
+      <span class="quote-mark">“</span>
+
+      <p class="founder-quote">
+        Sustainable growth is created when businesses are built with integrity,
+        clarity of purpose, and a deep sense of responsibility toward society.
+      </p>
+
+      <p class="founder-desc">
+        Dilip Auti brings years of experience in international business strategy,
+        entrepreneurship development, and MSME growth. Through his work, he has
+        guided hundreds of entrepreneurs to build scalable, ethical, and
+        future-ready enterprises.
+      </p>
+
+      <p class="founder-desc">
+        As a founder of Auti Foundation, his vision extends beyond business
+        success — focusing on empowering communities, nurturing leadership,
+        and enabling long-term social transformation through opportunity-led
+        development.
+      </p>
+
+    </div>
+
+    <div class="founder-photo">
+      <img src="./Assests/dilip-auti-removebg-preview (1).png" alt="Dilip Auti">
+    </div>
+  </div>
+
+  <!-- FOUNDER 2 -->
+  <div class="founder-row bg-soft-beige reverse">
+    <div class="founder-photo">
+      <img src="./Assests/komal-auti-removebg-preview (1).png" alt="Komal Auti">
+    </div>
+
+    <div class="founder-text">
+
+      <h3 class="founder-name">Komal Auti</h3>
+      <p class="founder-role">
+        Author • Financial Growth Mentor • TEDx Speaker
+      </p>
+
+      <span class="quote-mark">“</span>
+
+      <p class="founder-quote">
+        Financial awareness is the foundation of independence. When people
+        understand money, they gain confidence, control, and the power to
+        shape their own future.
+      </p>
+
+      <p class="founder-desc">
+        Komal Auti is an author, TEDx speaker, and financial growth mentor
+        dedicated to spreading financial literacy and empowering individuals,
+        especially women, to achieve independence and confidence.
+      </p>
+
+      <p class="founder-desc">
+        Through Auti Foundation, she actively supports education initiatives,
+        women empowerment programs, and community-driven learning that promotes
+        dignity, inclusion, and long-term societal well-being.
+      </p>
+
+    </div>
+  </div>
+
+</section>
+
+
     <!-- FOOTER -->
     <footer class="footer">
 
@@ -306,11 +404,10 @@
         <div class="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#products">Donation</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="">Home</a></li>
+            <li><a href="./pages/about-us.html">About Us</a></li>
+            <li><a href="./pages/donation.html">Donation</a></li>
+            <li><a href="./pages/contactus.html">Contact</a></li>
           </ul>
         </div>
 
@@ -319,7 +416,10 @@
           <h4>Find Us</h4>
 
           <div class="map-box">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d276.5948208404576!2d73.75850341429336!3d18.595949088625357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9001ebd5b9d%3A0xeb203166054165a0!2sLaxmi%20Avenue%20Commercial%20Tower!5e1!3m2!1sen!2sin!4v1765868443447!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d276.5948208404576!2d73.75850341429336!3d18.595949088625357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9001ebd5b9d%3A0xeb203166054165a0!2sLaxmi%20Avenue%20Commercial%20Tower!5e1!3m2!1sen!2sin!4v1765868443447!5m2!1sen!2sin"
+              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
             </iframe>
           </div>
 

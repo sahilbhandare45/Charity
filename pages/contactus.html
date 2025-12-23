@@ -7,233 +7,193 @@
 
 <style>
 :root{
-  --primary:#0e523d;
-  --secondary:#1c7c5a;
-  --bg:#f4f7f6;
-  --text:#333;
-  --radius:14px;
+  --green:#0e523d;
+  --green-soft:#eef5f2;
+  --dark:#0f172a;
+  --gray:#6b7280;
+  --border:#e5e7eb;
+  --radius:18px;
 }
 
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family: "Segoe UI", system-ui, sans-serif;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
 }
 
 body{
-  background:linear-gradient(135deg,#eef5f2,#f8faf9);
-  min-height:100vh;
+  background:#ffffff;
+  color:var(--dark);
+  line-height:1.8;
 }
 
 /* HEADER */
-header{
-  height:80px;
-  background:linear-gradient(135deg,var(--primary),var(--secondary));
+#site-header{
+  padding:24px 8vw;
   display:flex;
   align-items:center;
-  justify-content:center;
-  box-shadow:0 4px 15px rgba(0,0,0,.15);
+  justify-content: center;
+  gap:16px;
+  color: white;
+  background-color: var(--green);
 }
 
-header img{
-  height:60px;
+#site-header img{
+  height:52px;
 }
 
-/* CONTAINER */
-.contact-container{
-  max-width:900px;
-  margin:40px auto;
-  background:rgba(255,255,255,.85);
-  backdrop-filter:blur(10px);
-  padding:40px;
-  border-radius:var(--radius);
-  box-shadow:0 20px 40px rgba(0,0,0,.12);
-  animation:fadeUp .8s ease;
+#site-header span{
+  font-weight:700;
+  font-size:20px;
 }
 
-@keyframes fadeUp{
-  from{opacity:0; transform:translateY(30px);}
-  to{opacity:1; transform:translateY(0);}
+/* HERO */
+#contact-hero{
+  padding:40px 8vw 70px;
+  background:linear-gradient(180deg,var(--green-soft),#ffffff);
 }
 
-.contact-container h2{
-  text-align:center;
-  color:var(--primary);
-  margin-bottom:8px;
-  font-size:28px;
+#contact-hero h1{
+  font-size:clamp(38px,5vw,58px);
+  font-weight:700;
+  margin-bottom:14px;
 }
 
-.contact-container p{
-  text-align:center;
-  margin-bottom:35px;
-  color:#555;
+#contact-hero p{
+  font-size:18px;
+  color:var(--gray);
+  max-width:720px;
+}
+
+/* PAGE */
+#contact-page{
+  padding:70px 8vw;
+}
+
+/* LAYOUT */
+#contact-layout{
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:60px;
 }
 
 /* FORM */
-form{
+#contact-form{
+  background:#fff;
+  padding:40px;
+  border-radius:var(--radius);
+  border:5px solid var(--green);
+}
+
+#contact-form h2{
+  font-size:26px;
+  margin-bottom:8px;
+}
+
+#contact-form p{
+  font-size:15.5px;
+  color:var(--gray);
+  margin-bottom:30px;
+}
+
+.form-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:20px;
+  gap:22px;
 }
 
-.field{
-  position:relative;
+.form-field{
+  display:flex;
+  flex-direction:column;
 }
 
-.field input,
-.field textarea{
-  width:100%;
-  padding:14px;
-  border:1px solid #ccc;
-  border-radius:8px;
-  font-size:15px;
-  background:#fff;
-  outline:none;
-  transition:.3s;
-}
-
-.field label{
-  position:absolute;
-  top:50%;
-  left:14px;
-  color:#888;
-  font-size:14px;
-  transform:translateY(-50%);
-  pointer-events:none;
-  transition:.3s;
-  background:#fff;
-  padding:0 5px;
-}
-
-.field textarea + label{
-  top:18px;
-  transform:none;
-}
-
-.field input:focus,
-.field textarea:focus{
-  border-color:var(--primary);
-  box-shadow:0 0 0 3px rgba(14,82,61,.15);
-}
-
-.field input:focus + label,
-.field input:not(:placeholder-shown) + label,
-.field textarea:focus + label,
-.field textarea:not(:placeholder-shown) + label{
-  top:-8px;
-  font-size:12px;
-  color:var(--primary);
-}
-
-textarea{
-  resize:none;
-  height:120px;
-}
-
-.full{
+.form-field.full{
   grid-column:1 / -1;
 }
 
-.error{
+.form-field label{
+  font-size:13px;
+  font-weight:500;
+  margin-bottom:6px;
+}
+
+.form-field input,
+.form-field textarea{
+  padding:13px 14px;
+  border-radius:10px;
+  border:2px solid var(--border);
+  font-size:14px;
+}
+
+.form-field textarea{
+  height:130px;
+  resize:none;
+}
+
+.form-error{
   font-size:12px;
-  color:#d9534f;
+  color:#c0392b;
   margin-top:4px;
 }
 
 /* BUTTON */
-.submit-btn{
-  grid-column:1 / -1;
-  padding:16px;
+#contact-submit{
+  margin-top:26px;
+  width:100%;
+  padding:15px;
+  background:var(--green);
   border:none;
   border-radius:40px;
-  background:linear-gradient(135deg,var(--primary),var(--secondary));
   color:#fff;
-  font-size:16px;
+  font-size:15px;
   font-weight:600;
   cursor:pointer;
-  transition:.4s;
-  position:relative;
-  overflow:hidden;
 }
 
-.submit-btn::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(255,255,255,.25);
-  opacity:0;
-  transition:.4s;
+/* INFO */
+#contact-info{
+  padding-top:10px;
 }
 
-.submit-btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 25px rgba(14,82,61,.35);
+#contact-info h3{
+  font-size:22px;
+  margin-bottom:18px;
 }
 
-.submit-btn:hover::after{
-  opacity:1;
+.info-card{
+  padding:24px;
+  border-radius:var(--radius);
+  border:5px solid var(--green);
+  margin-bottom:18px;
 }
 
-/* INFO SECTION */
-.contact-info{
-  margin-top:50px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:24px;
+.info-card h4{
+  font-size:15px;
+  color:var(--green);
+  margin-bottom:6px;
 }
 
-.info-box{
-  background:#ffffff;
-  padding:26px;
-  border-radius:16px;
-  position:relative;
-  min-height:160px;
-  box-shadow:0 12px 30px rgba(0,0,0,.08);
-  transition:.35s ease;
+.info-card p{
+  font-size:14.5px;
+  color:var(--gray);
 }
 
-.info-box::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  height:100%;
-  width:6px;
-  background:linear-gradient(180deg,#0e523d,#1c7c5a);
-  border-radius:16px 0 0 16px;
-}
-
-.info-box:hover{
-  transform:translateY(-6px);
-  box-shadow:0 20px 45px rgba(0,0,0,.12);
-}
-
-/* ICON */
-.info-icon{
-  font-size:28px;
-  margin-bottom:14px;
-}
-
-/* TEXT */
-.info-box h4{
-  font-size:16px;
-  color:#0e523d;
-  margin-bottom:8px;
-  font-weight:600;
-}
-
-.info-box p{
+/* FOOTNOTE */
+#contact-note{
+  margin-top:30px;
   font-size:14px;
-  color:#555;
-  line-height:1.6;
-  margin-bottom:4px;
+  color:var(--gray);
 }
-
 
 /* RESPONSIVE */
-@media(max-width:768px){
-  form{
+@media(max-width:900px){
+  #contact-layout{
+    grid-template-columns:1fr;
+  }
+  .form-grid{
     grid-template-columns:1fr;
   }
 }
@@ -242,114 +202,94 @@ textarea{
 
 <body>
 
-<header>
-  <img src="../Assests/auti-logo-bg.png" alt="Auti Foundation Logo">
+<!-- HEADER -->
+<header id="site-header">
+  <img src="../Assests/auti-logo-bg.png" alt="Auti Foundation Logo" id="logo">
 </header>
 
-<div class="contact-container">
-  <h2>Contact Us</h2>
-  <p>We’d love to hear from you 💚</p>
+<!-- HERO -->
+<section id="contact-hero">
+  <h1>Get in Touch</h1>
+  <p>
+    Whether you’re looking to collaborate, support our initiatives, or learn more
+    about our work, we’d be happy to hear from you.
+  </p>
+</section>
 
-  <form id="contactForm">
+<!-- CONTENT -->
+<main id="contact-page">
 
-    <div class="field">
-      <input type="text" id="name" placeholder=" " />
-      <label>Full Name *</label>
-      <div class="error"></div>
-    </div>
+  <section id="contact-layout">
 
-    <div class="field">
-      <input type="email" id="email" placeholder=" " />
-      <label>Email Address *</label>
-      <div class="error"></div>
-    </div>
+    <!-- FORM -->
+    <form id="contact-form">
+      <h2>Contact Us</h2>
+      <p>Please fill in the form below and our team will get back to you.</p>
 
-    <div class="field">
-      <input type="tel" id="phone" placeholder=" " />
-      <label>Phone / WhatsApp *</label>
-      <div class="error"></div>
-    </div>
+      <div class="form-grid">
 
-    <div class="field">
-      <input type="text" id="subject" placeholder=" " />
-      <label>Subject *</label>
-      <div class="error"></div>
-    </div>
+        <div class="form-field">
+          <label for="full-name">Full Name</label>
+          <input id="full-name" type="text">
+          <div class="form-error"></div>
+        </div>
 
-    <div class="field full">
-      <textarea id="message" placeholder=" "></textarea>
-      <label>Your Message *</label>
-      <div class="error"></div>
-    </div>
+        <div class="form-field">
+          <label for="email">Email Address</label>
+          <input id="email" type="email">
+          <div class="form-error"></div>
+        </div>
 
-    <button class="submit-btn">Send Message</button>
-  </form>
+        <div class="form-field">
+          <label for="phone">Phone / WhatsApp</label>
+          <input id="phone" type="tel">
+          <div class="form-error"></div>
+        </div>
 
-  <div class="contact-info">
+        <div class="form-field">
+          <label for="subject">Subject</label>
+          <input id="subject" type="text">
+          <div class="form-error"></div>
+        </div>
 
-  <div class="info-box">
-    <div class="info-icon">📍</div>
-    <h4>Our Location</h4>
-    <p>Pune</p>
-    <p>Maharashtra, India</p>
-  </div>
+        <div class="form-field full">
+          <label for="message">Message</label>
+          <textarea id="message"></textarea>
+          <div class="form-error"></div>
+        </div>
 
-  <div class="info-box">
-    <div class="info-icon">📞</div>
-    <h4>Call Us</h4>
-    <p>+91 85510 67979</p>
-    <p>Available Mon–Sat</p>
-  </div>
+      </div>
 
-  <div class="info-box">
-    <div class="info-icon">✉</div>
-    <h4>Email Us</h4>
-    <p>autifoundation@gmail.com</p>
-  </div>
+      <button id="contact-submit" type="submit">Send Message</button>
+    </form>
 
-</div>
-</div>
+    <!-- INFO -->
+    <aside id="contact-info">
+      <h3>Contact Information</h3>
 
-<script>
-const form = document.getElementById("contactForm");
-const fields = ["name","email","phone","subject","message"];
+      <div class="info-card" id="info-location">
+        <h4>Office Location</h4>
+        <p>Pune, Maharashtra, India</p>
+      </div>
 
-form.addEventListener("submit", e=>{
-  e.preventDefault();
-  let valid = true;
+      <div class="info-card" id="info-phone">
+        <h4>Phone</h4>
+        <p>+91 85510 67979</p>
+        <p>Monday – Saturday</p>
+      </div>
 
-  fields.forEach(id=>{
-    const input = document.getElementById(id);
-    const error = input.parentElement.querySelector(".error");
-    error.textContent = "";
+      <div class="info-card" id="info-email">
+        <h4>Email</h4>
+        <p>autifoundation@gmail.com</p>
+      </div>
 
-    if(input.value.trim().length < 3){
-      error.textContent = "This field is required.";
-      valid = false;
-    }
-  });
+      <p id="contact-note">
+        We aim to respond to all enquiries within 1–2 working days.
+      </p>
+    </aside>
 
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){
-    email.parentElement.querySelector(".error").textContent = "Invalid email format.";
-    valid = false;
-  }
-
-  if(!/^[0-9]{10}$/.test(phone.value)){
-    phone.parentElement.querySelector(".error").textContent = "Enter 10-digit number.";
-    valid = false;
-  }
-
-  if(message.value.trim().length < 10){
-    message.parentElement.querySelector(".error").textContent = "Minimum 10 characters.";
-    valid = false;
-  }
-
-  if(valid){
-    alert("Thank you for contacting Auti Foundation 💚");
-    form.reset();
-  }
-});
-</script>
+  </section>
+</main>
 
 </body>
 </html>

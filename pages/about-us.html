@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Auti Foundation</title>
+
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+<style>
+:root{
+  --green:#0e523d;
+  --green-soft:#f1f7f4;
+  --dark:#0f172a;
+  --gray:#64748b;
+  --light:#fafafa;
+  --border:#e5e7eb;
+  --radius:20px;
+}
+
+/* BASE */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+}
+
+body{
+  background:#fff;
+  color:var(--dark);
+  line-height:1.9;
+}
+
+section{
+  position:relative;
+}
+
+/* HERO */
+.hero{
+  padding:140px 8vw 120px;
+  background:
+    linear-gradient(rgba(14,82,61,.9),rgba(14,82,61,.85)),
+    url("https://images.unsplash.com/photo-1604881991720-f91add269bed") center/cover no-repeat;
+  color:#fff;
+}
+
+.hero h1{
+  font-size:clamp(48px,6vw,80px);
+  font-weight:800;
+  max-width:900px;
+  letter-spacing:-1px;
+}
+
+.hero p{
+  margin-top:28px;
+  font-size:20px;
+  max-width:720px;
+  color:#e5f3ee;
+}
+
+/* SECTION */
+.section{
+  padding:30px 8vw;
+}
+
+.section.light{
+  background:var(--light);
+}
+
+.section h2{
+  font-size:clamp(34px,4.5vw,54px);
+  font-weight:700;
+  margin-bottom:26px;
+}
+
+.section p{
+  font-size:18px;
+  color:var(--gray);
+  max-width:860px;
+  margin-bottom:20px;
+}
+
+/* STORY LAYOUT */
+.story-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:32px;
+  align-items:center;
+}
+
+.story-grid img{
+  width:100%;
+  height:auto;
+  border-radius:14px;
+  box-shadow:0 16px 36px rgba(0,0,0,0.12);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .story-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* VISION MISSION */
+.vm-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
+  margin-top:60px;
+}
+
+.vm-card{
+  background:#fff;
+  padding:48px 42px;
+  border-radius:var(--radius);
+  border:1px solid var(--border);
+  box-shadow:0 25px 55px rgba(0,0,0,.08);
+}
+
+.vm-card i{
+  font-size:42px;
+  color:var(--green);
+  margin-bottom:20px;
+  display:inline-block;
+}
+
+.vm-card h3{
+  font-size:26px;
+  margin-bottom:16px;
+}
+
+.vm-card p{
+  font-size:17.5px;
+}
+
+/* APPROACH */
+.approach-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:36px;
+  margin-top:60px;
+}
+
+.approach{
+  background:#fff;
+  padding:36px 34px;
+  border-radius:var(--radius);
+  box-shadow:0 20px 45px rgba(0,0,0,.08);
+  border-top:6px solid var(--green);
+}
+
+.approach h4{
+  font-size:22px;
+  margin-bottom:14px;
+}
+
+.approach p{
+  font-size:16.8px;
+  color:var(--gray);
+}
+
+/* CTA STRIP */
+.cta{
+  background:linear-gradient(135deg,var(--green),#0b3e2e);
+  padding:90px 8vw;
+  text-align:center;
+  color:#fff;
+}
+
+.cta h2{
+  font-size:clamp(34px,4.5vw,52px);
+  margin-bottom:18px;
+}
+
+.cta p{
+  font-size:19px;
+  max-width:760px;
+  margin:0 auto;
+  color:#dff3ec;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .story{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:600px){
+  .hero{
+    padding:100px 6vw 90px;
+  }
+  .section{
+    padding:80px 6vw;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>About <span>Auti Foundation</span></h1>
+  <p>
+    Creating meaningful and lasting social change by empowering individuals,
+    strengthening communities, and enabling opportunity-led development.
+  </p>
+</section>
+
+<!-- FOUNDATION STORY -->
+<section class="section light">
+  <div class="content-wrap story-grid">
+
+    <!-- TEXT -->
+    <div>
+      <h2>Our Story</h2>
+      <p>
+        Auti Foundation was established with the belief that sustainable progress begins
+        when individuals are empowered with education, skills, and access to opportunity.
+        Rather than short-term aid, the foundation focuses on building systems that support
+        dignity, independence, and long-term growth.
+      </p>
+      <p>
+        Built on the core pillars of education, entrepreneurship, empowerment, health,
+        and environmental sustainability, the foundation addresses real-world challenges
+        through inclusive and community-driven initiatives.
+      </p>
+      <p>
+        Through focused efforts in education, entrepreneurship, women empowerment, health,
+        and environmental responsibility, Auti Foundation works towards building resilient
+        communities and enabling individuals to lead self-reliant lives.
+      </p>
+    </div>
+
+    <!-- IMAGE -->
+    <div>
+      <img
+        src="../Assests/img6.jpeg"
+        alt="Community empowerment and social development"
+      />
+    </div>
+
+  </div>
+</section>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vision & Mission</title>
+
+<!-- Remix Icons -->
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+<style>
+/* SECTION */
+.vm-section {
+  padding: 80px 20px;
+  background: #f5f7f6;
+}
+
+.vm-section h2 {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 60px;
+  font-weight: 700;
+  color: #111;
+}
+
+/* GRID */
+.vm-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+/* CARD */
+.vm-card {
+  position: relative;
+  padding: 65px 40px 40px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* HOVER */
+.vm-card:hover {
+  background: #0f4d3a;
+  transform: translateY(-8px);
+}
+
+/* ICON BOX */
+.vm-card .icon-box {
+  position: absolute;
+  top: -32px;
+  left: 40px;
+  width: 72px;
+  height: 72px;
+  background: #1faa75;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vm-card .icon-box i {
+  font-size: 34px;
+  color: #fff;
+}
+
+/* TITLE */
+.vm-card h3 {
+  font-size: 26px;
+  margin-bottom: 18px;
+  font-weight: 700;
+  color: #111;
+}
+
+/* TEXT */
+.vm-card p {
+  font-size: 15.8px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* HOVER TEXT COLOR */
+.vm-card:hover h3,
+.vm-card:hover p {
+  color: #ffffff;
+}
+
+/* FADE IN */
+.vm-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .vm-card {
+    padding: 60px 25px 35px;
+  }
+}
+
+/* DONATION CTA */
+.donation-cta{
+  background:
+    linear-gradient(135deg, rgba(14,82,61,.95), rgba(11,62,46,.95)),
+    url("https://images.unsplash.com/photo-1521791136064-7986c2920216") center/cover no-repeat;
+  padding:100px 8vw;
+  text-align:center;
+  color:#ffffff;
+}
+
+.donation-cta h2{
+  font-size:clamp(34px,4.5vw,54px);
+  font-weight:800;
+  margin-bottom:20px;
+  letter-spacing:-.5px;
+}
+
+.donation-cta p{
+  font-size:19px;
+  max-width:780px;
+  margin:0 auto 40px;
+  color:#e5f3ee;
+  line-height:1.8;
+}
+
+.cta-actions{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.cta-btn{
+  padding:16px 38px;
+  border-radius:40px;
+  font-size:15px;
+  font-weight:600;
+  text-decoration:none;
+  transition:.35s ease;
+  display:inline-block;
+}
+
+.cta-btn.primary{
+  background:#ffffff;
+  color:#0e523d;
+}
+
+.cta-btn.primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 30px rgba(0,0,0,.25);
+}
+
+.cta-btn.secondary{
+  border:2px solid #ffffff;
+  color:#ffffff;
+}
+
+.cta-btn.secondary:hover{
+  background:#ffffff;
+  color:#0e523d;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .donation-cta{
+    padding:80px 6vw;
+  }
+  .donation-cta p{
+    font-size:17px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- VISION & MISSION -->
+<section class="vm-section">
+  <h2>Vision & Mission</h2>
+
+  <div class="vm-grid">
+
+    <!-- VISION -->
+    <div class="vm-card">
+      <div class="icon-box">
+        <i class="ri-eye-line"></i>
+      </div>
+      <h3>Our Vision</h3>
+      <p>
+        To build an inclusive society where every individual has access to education,
+        opportunity, and support, enabling them to live with dignity, self-reliance,
+        and purpose.
+      </p>
+    </div>
+
+    <!-- MISSION -->
+    <div class="vm-card">
+      <div class="icon-box">
+        <i class="ri-flag-2-line"></i>
+      </div>
+      <h3>Our Mission</h3>
+      <p>
+        To empower individuals and communities through education, skill development,
+        entrepreneurship support, health initiatives, and environmental responsibility,
+        creating sustainable livelihoods and long-term social impact.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+/* FADE-IN ANIMATION */
+const vmCards = document.querySelectorAll(".vm-card");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.25 });
+
+vmCards.forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>
+
+
+<!-- APPROACH -->
+<section class="section">
+  <h2>How We Create Impact</h2>
+
+  <div class="approach-grid">
+    <div class="approach">
+      <h4>Opportunity-Led Development</h4>
+      <p>
+        We believe access to opportunity must come before expecting behavioural or
+        social change, ensuring long-term transformation.
+      </p>
+    </div>
+
+    <div class="approach">
+      <h4>Community Partnership</h4>
+      <p>
+        Our initiatives are designed alongside communities to ensure relevance,
+        ownership, and sustainable outcomes.
+      </p>
+    </div>
+
+    <div class="approach">
+      <h4>Long-Term Systems</h4>
+      <p>
+        We focus on building scalable programs and systems that continue to create
+        impact beyond immediate intervention.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- DONATION CTA -->
+<section class="donation-cta">
+  <h2>Be the Reason Someone’s Life Changes</h2>
+  <p>
+    Your contribution helps us support education, empower women, promote health,
+    protect the environment, and build stronger, self-reliant communities.
+    Together, we can create lasting social impact.
+  </p>
+
+  <div class="cta-actions">
+    <a href="./donation.html" class="cta-btn primary">Donate Now</a>
+    <a href="./contactus.html" class="cta-btn secondary">Get Involved</a>
+  </div>
+</section>
+
+</body>
+
+</html>

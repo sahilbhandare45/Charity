@@ -6,269 +6,367 @@
 <title>Donate | Auti Foundation</title>
 
 <style>
+:root{
+  --green:#0e523d;
+  --green-soft:#eef5f2;
+  --dark:#0f172a;
+  --gray:#6b7280;
+  --border:#e5e7eb;
+  --radius:18px;
+}
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
 }
 
 body{
-  background:#f5f5f5;
+  background:#ffffff;
+  color:var(--dark);
+  line-height:1.7;
 }
 
-header{
-  height:80px;
-  background:#0e523d;
+/* HEADER */
+#donate-header{
+  padding:24px 8vw;
   display:flex;
+  background-color: var(--green);
   align-items:center;
-  justify-content:center;
+  justify-content: center;
+  gap:14px;
 }
 
-header img{
-  height:60px;
+#donate-header img{
+  height:52px;
 }
 
-.donation-container{
-  max-width:900px;
-  margin:40px auto;
+#donate-header span{
+  font-size:18px;
+  font-weight:600;
+}
+
+/* HERO */
+#donate-hero{
+  padding:40px 8vw 30px;
+  background:linear-gradient(180deg,var(--green-soft),#ffffff);
+}
+
+#donate-hero h1{
+  font-size:clamp(36px,5vw,56px);
+  margin-bottom:14px;
+}
+
+#donate-hero p{
+  font-size:18px;
+  max-width:720px;
+  color:var(--gray);
+}
+
+/* PAGE */
+#donation-page{
+  padding:60px 8vw;
+}
+
+/* CONTAINER */
+#donation-container{
+  max-width:1000px;
+  margin:0 auto;
   background:#fff;
   padding:40px;
-  border-radius:12px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+  border-radius:var(--radius);
+  border:4px solid var(--green);
 }
 
-h2{
-  text-align:center;
-  color:#0e523d;
+/* SECTION TITLE */
+.form-section-title{
+  font-size:20px;
+  margin:34px 0 18px;
+  color:var(--green);
 }
 
-p{
-  text-align:center;
-  margin:15px 0 30px;
-}
-
-form{
+/* FORM */
+#donation-form{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:20px;
 }
 
-.full-width{
+.full{
   grid-column:1 / -1;
+}
+
+label{
+  font-size:13px;
+  font-weight:500;
+  margin-bottom:6px;
+  display:block;
 }
 
 input, select{
-  padding:12px;
-  border:1px solid #ccc;
-  border-radius:6px;
+  width:100%;
+  padding:13px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  font-size:14px;
 }
 
-.amount-options{
+/* AMOUNT */
+#amount-options{
   display:flex;
-  gap:15px;
   flex-wrap:wrap;
+  gap:12px;
 }
 
 .amount-btn{
-  padding:10px 20px;
-  border:2px solid #0e523d;
+  padding:10px 18px;
+  border-radius:40px;
+  border:1.5px solid var(--green);
   background:#fff;
-  color:#0e523d;
-  border-radius:30px;
+  color:var(--green);
+  font-size:14px;
   cursor:pointer;
-  font-weight:600;
 }
 
 .amount-btn.active{
-  background:#0e523d;
+  background:var(--green);
   color:#fff;
 }
 
+/* CHECKBOX */
 .checkbox-group{
-  grid-column:1 / -1;
   display:flex;
   flex-direction:column;
-  gap:10px;
+  gap:12px;
+  font-size:14px;
 }
 
-.submit-btn{
-  grid-column:1 / -1;
-  padding:15px;
-  background:#0e523d;
-  color:#fff;
-  border:none;
-  border-radius:30px;
-  font-size:16px;
+.checkbox-group label{
+  display:flex;
+  align-items:center;
+  gap:10px;
   cursor:pointer;
 }
 
-.submit-btn:disabled{
-  opacity:0.7;
+.checkbox-group input[type="checkbox"]{
+  width:16px;
+  height:16px;
+  accent-color: var(--green);
 }
 
-#bankSection{
+
+/* BUTTON */
+#donate-btn{
+  margin-top:24px;
+  padding:15px;
+  background:var(--green);
+  border:none;
+  border-radius:40px;
+  color:#fff;
+  font-size:15px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+#donate-btn:disabled{
+  opacity:.7;
+}
+
+/* BANK */
+#bank-section{
   display:none;
-  margin-top:40px;
+  margin-top:50px;
+  padding-top:30px;
+  border-top:1px solid var(--border);
+}
+
+.bank-box{
+  background:var(--green-soft);
+  padding:22px;
+  border-radius:14px;
+  margin-bottom:20px;
+}
+
+.bank-box p{
+  font-size:14.5px;
+  margin-bottom:6px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  #donation-form{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <img src="../Assests/auti-logo-bg.png" alt="Auti Foundation">
+<!-- HEADER -->
+<header id="donate-header">
+  <img src="../Assests/auti-logo-bg.png" alt="Auti Foundation Logo">
 </header>
 
-<div class="donation-container">
-  <h2>Make a Donation</h2>
-  <p>Your contribution helps us change lives 💚</p>
+<!-- HERO -->
+<section id="donate-hero">
+  <h1>Make a Donation</h1>
+  <p>
+    Your contribution helps us empower communities, support education,
+    promote health and sustainability, and create lasting social impact.
+  </p>
+</section>
 
-  <form id="donationForm">
+<!-- PAGE -->
+<main id="donation-page">
 
-    <input id="name" type="text" placeholder="Full Name *" required>
-    <input id="email" type="email" placeholder="Email *" required>
+  <div id="donation-container">
 
-    <input id="phone" type="tel" placeholder="Phone *" required>
-    <input id="address" type="text" placeholder="Address">
+    <form id="donation-form">
 
-    <div class="full-width">
-      <strong>Donation Amount *</strong><br><br>
-      <div class="amount-options">
-        <button type="button" class="amount-btn" data-amount="500">₹500</button>
-        <button type="button" class="amount-btn" data-amount="1000">₹1000</button>
-        <button type="button" class="amount-btn" data-amount="2000">₹2000</button>
-        <button type="button" class="amount-btn" data-amount="5000">₹5000</button>
-        <button type="button" class="amount-btn" data-amount="other">Other</button>
+      <div class="full">
+        <h3 class="form-section-title">Donor Details</h3>
       </div>
-    </div>
 
-    <input id="customAmount" type="number" class="full-width" placeholder="Other Amount (₹)" disabled>
+      <div>
+        <label for="name">Full Name *</label>
+        <input id="name" type="text" required>
+      </div>
 
-    <select id="purpose" class="full-width" required>
-      <option value="">Select Purpose *</option>
-      <option>Education</option>
-      <option>Women Empowerment</option>
-      <option>Health</option>
-      <option>Environment</option>
-      <option>General</option>
-    </select>
+      <div>
+        <label for="email">Email *</label>
+        <input id="email" type="email" required>
+      </div>
 
-    <input id="pan" type="text" class="full-width" placeholder="PAN (Optional)">
+      <div>
+        <label for="phone">Phone *</label>
+        <input id="phone" type="tel" required>
+      </div>
 
-    <div class="checkbox-group">
-      <label><input type="checkbox" id="receipt"> Need receipt</label>
-      <label><input type="checkbox" id="updates"> Receive updates</label>
-      <label><input type="checkbox" id="consent" required> I agree *</label>
-    </div>
+      <div>
+        <label for="address">Address</label>
+        <input id="address" type="text">
+      </div>
 
-    <button id="donateBtn" class="submit-btn" type="submit">Proceed to Donate</button>
-  </form>
+      <div class="full">
+        <h3 class="form-section-title">Donation Amount *</h3>
+        <div id="amount-options">
+          <button type="button" class="amount-btn" data-amount="500">₹500</button>
+          <button type="button" class="amount-btn" data-amount="1000">₹1,000</button>
+          <button type="button" class="amount-btn" data-amount="2000">₹2,000</button>
+          <button type="button" class="amount-btn" data-amount="5000">₹5,000</button>
+          <button type="button" class="amount-btn" data-amount="other">Other</button>
+        </div>
+      </div>
 
-  <div id="bankSection">
-    <h3>Bank Transfer Details</h3>
-    <p><strong>Account Name:</strong> Auti Foundation</p>
-    <p><strong>Account No:</strong> 924010074976719</p>
-    <p><strong>IFSC:</strong> UTIB0001034</p>
-    <p><strong>Bank:</strong> Axis Bank</p>
+      <div class="full">
+        <label for="customAmount">Other Amount</label>
+        <input id="customAmount" type="number" disabled>
+      </div>
 
-    <form id="postPaymentForm">
-      <input id="txnId" type="text" placeholder="Transaction ID *" required>
-      <button class="submit-btn" type="submit">Confirm Donation</button>
+      <div class="full">
+        <label for="purpose">Purpose *</label>
+        <select id="purpose" required>
+          <option value="">Select Purpose</option>
+          <option>Education</option>
+          <option>Women Empowerment</option>
+          <option>Health</option>
+          <option>Environment</option>
+          <option>General</option>
+        </select>
+      </div>
+
+      <div class="full">
+        <label for="pan">PAN (Optional)</label>
+        <input id="pan" type="text">
+      </div>
+
+      <div class="full checkbox-group">
+        <label><input type="checkbox" id="receipt"> Need donation receipt</label>
+        <label><input type="checkbox" id="updates"> Receive updates</label>
+        <label><input type="checkbox" id="consent" required> I agree to the terms *</label>
+      </div>
+
+      <button id="donate-btn" class="full" type="submit">Proceed to Donate</button>
     </form>
+
+    <!-- BANK -->
+    <section id="bank-section">
+      <h3 class="form-section-title">Bank Transfer Details</h3>
+
+      <div class="bank-box">
+        <p><strong>Account Name:</strong> Auti Foundation</p>
+        <p><strong>Account No:</strong> 924010074976719</p>
+        <p><strong>IFSC:</strong> UTIB0001034</p>
+        <p><strong>Bank:</strong> Axis Bank</p>
+      </div>
+
+      <form id="postPaymentForm">
+        <label for="txnId">Transaction ID *</label>
+        <input id="txnId" type="text" required>
+        <button id="donate-btn" type="submit">Confirm Donation</button>
+      </form>
+    </section>
+
   </div>
-</div>
+</main>
 
 <script>
 const API_URL = "https://script.google.com/macros/s/AKfycbwns-CqwnYZaUAajo8oTfaS_ZMiQ9qDHoDkUIDViK8MMeWObD7B2Z_JC6DvNL3GwaezwQ/exec";
 
-let selectedAmount = null;
-let donorId = null;
+let selectedAmount=null;
+let donorId=null;
 
-const nameInput = document.getElementById("name");
-const emailInput = document.getElementById("email");
-const phoneInput = document.getElementById("phone");
-const addressInput = document.getElementById("address");
-const purposeSelect = document.getElementById("purpose");
-const panInput = document.getElementById("pan");
-const receiptCheckbox = document.getElementById("receipt");
-const updatesCheckbox = document.getElementById("updates");
-const txnInput = document.getElementById("txnId");
+const amountBtns=document.querySelectorAll(".amount-btn");
+const customAmount=document.getElementById("customAmount");
 
-const amountBtns = document.querySelectorAll(".amount-btn");
-const customAmount = document.getElementById("customAmount");
-
-amountBtns.forEach(btn => {
-  btn.onclick = () => {
-    amountBtns.forEach(b => b.classList.remove("active"));
+amountBtns.forEach(btn=>{
+  btn.onclick=()=>{
+    amountBtns.forEach(b=>b.classList.remove("active"));
     btn.classList.add("active");
 
-    if (btn.dataset.amount === "other") {
-      customAmount.disabled = false;
-      customAmount.required = true;
-      selectedAmount = null;
-      customAmount.focus();
-    } else {
-      selectedAmount = Number(btn.dataset.amount);
-      customAmount.disabled = true;
-      customAmount.required = false;
-      customAmount.value = "";
+    if(btn.dataset.amount==="other"){
+      customAmount.disabled=false;
+      customAmount.required=true;
+      selectedAmount=null;
+    }else{
+      selectedAmount=Number(btn.dataset.amount);
+      customAmount.disabled=true;
+      customAmount.required=false;
+      customAmount.value="";
     }
   };
 });
 
-document.getElementById("donationForm").onsubmit = async e => {
+document.getElementById("donation-form").onsubmit=async e=>{
   e.preventDefault();
+  const amount=selectedAmount ?? Number(customAmount.value);
+  if(!amount||amount<=0) return alert("Please select donation amount");
 
-  const amount = selectedAmount ?? Number(customAmount.value);
-  if (!amount || amount <= 0) {
-    alert("Please select donation amount");
-    return;
-  }
+  donorId="AUTI"+Date.now();
+  document.getElementById("donate-btn").disabled=true;
 
-  donorId = "AUTI" + Date.now();
+  const fd=new FormData(e.target);
+  fd.append("type","pre");
+  fd.append("id",donorId);
+  fd.append("amount",amount);
+  fd.append("method","Bank Transfer");
 
-  document.getElementById("donateBtn").disabled = true;
-
-  const formData = new FormData();
-  formData.append("type", "pre");
-  formData.append("id", donorId);
-  formData.append("name", nameInput.value);
-  formData.append("email", emailInput.value);
-  formData.append("phone", phoneInput.value);
-  formData.append("address", addressInput.value);
-  formData.append("amount", amount);
-  formData.append("purpose", purposeSelect.value);
-  formData.append("method", "Bank Transfer");
-  formData.append("pan", panInput.value);
-  formData.append("receipt", receiptCheckbox.checked);
-  formData.append("updates", updatesCheckbox.checked);
-
-  await fetch(API_URL, {
-    method: "POST",
-    mode: "no-cors",
-    body: formData
-  });
-
-  document.getElementById("bankSection").style.display = "block";
-  document.getElementById("bankSection").scrollIntoView({ behavior: "smooth" });
+  await fetch(API_URL,{method:"POST",mode:"no-cors",body:fd});
+  document.getElementById("bank-section").style.display="block";
+  document.getElementById("bank-section").scrollIntoView({behavior:"smooth"});
 };
 
-document.getElementById("postPaymentForm").onsubmit = async e => {
+document.getElementById("postPaymentForm").onsubmit=async e=>{
   e.preventDefault();
+  const fd=new FormData();
+  fd.append("type","post");
+  fd.append("id",donorId);
+  fd.append("txn",document.getElementById("txnId").value);
 
-  const postData = new FormData();
-  postData.append("type", "post");
-  postData.append("id", donorId);
-  postData.append("txn", txnInput.value);
-
-  await fetch(API_URL, {
-    method: "POST",
-    mode: "no-cors",
-    body: postData
-  });
-
-  alert("Thank you! Donation recorded.");
+  await fetch(API_URL,{method:"POST",mode:"no-cors",body:fd});
+  alert("Thank you for supporting Auti Foundation 💚");
 };
 </script>
 
