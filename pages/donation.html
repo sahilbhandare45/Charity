@@ -193,10 +193,158 @@ input, select{
   margin-bottom:6px;
 }
 
-/* RESPONSIVE */
-@media(max-width:900px){
-  #donation-form{
-    grid-template-columns:1fr;
+/* =========================
+   DONATE PAGE – RESPONSIVE PATCH
+========================= */
+
+/* -------- LARGE LAPTOPS -------- */
+@media (max-width: 1200px) {
+  #donation-container {
+    padding: 36px;
+  }
+
+  #donation-page {
+    padding: 55px 6vw;
+  }
+}
+
+/* -------- TABLETS -------- */
+@media (max-width: 992px) {
+
+  #donate-header {
+    padding: 20px 6vw;
+  }
+
+  #donate-hero {
+    padding: 35px 6vw 25px;
+  }
+
+  #donate-hero h1 {
+    font-size: clamp(30px, 5vw, 44px);
+  }
+
+  #donate-hero p {
+    font-size: 16px;
+  }
+
+  #donation-page {
+    padding: 50px 6vw;
+  }
+
+  #donation-container {
+    padding: 32px;
+  }
+
+  #donation-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -------- MOBILE DEVICES -------- */
+@media (max-width: 768px) {
+
+  #donate-header {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  #donate-header img {
+    height: 46px;
+  }
+
+  #donate-hero {
+    padding: 30px 5vw 22px;
+    text-align: center;
+  }
+
+  #donate-hero p {
+    margin: 0 auto;
+    font-size: 15px;
+  }
+
+  #donation-page {
+    padding: 45px 5vw;
+  }
+
+  #donation-container {
+    padding: 26px;
+  }
+
+  .form-section-title {
+    font-size: 18px;
+  }
+
+  input,
+  select {
+    font-size: 13.5px;
+    padding: 12px;
+  }
+
+  #amount-options {
+    justify-content: center;
+  }
+
+  .amount-btn {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+
+  .checkbox-group {
+    font-size: 13.5px;
+  }
+
+  #donate-btn {
+    font-size: 14px;
+    padding: 14px;
+  }
+}
+
+/* -------- SMALL MOBILES -------- */
+@media (max-width: 576px) {
+
+  #donate-hero h1 {
+    font-size: 26px;
+  }
+
+  #donate-hero p {
+    font-size: 14.5px;
+  }
+
+  #donation-container {
+    padding: 22px;
+  }
+
+  .bank-box {
+    padding: 18px;
+  }
+
+  .bank-box p {
+    font-size: 13.5px;
+  }
+
+  .amount-btn {
+    flex: 1 1 calc(50% - 10px);
+    text-align: center;
+  }
+}
+
+/* -------- EXTRA SMALL DEVICES -------- */
+@media (max-width: 420px) {
+
+  #donate-hero {
+    padding: 26px 16px 20px;
+  }
+
+  #donation-page {
+    padding: 40px 16px;
+  }
+
+  #donation-container {
+    padding: 20px;
+  }
+
+  #donate-btn {
+    font-size: 13.5px;
   }
 }
 </style>
@@ -231,22 +379,22 @@ input, select{
 
       <div>
         <label for="name">Full Name *</label>
-        <input id="name" type="text" required>
+        <input id="name" name="name" type="text" required>
       </div>
 
       <div>
         <label for="email">Email *</label>
-        <input id="email" type="email" required>
+        <input id="email" name="email" type="email" required>
       </div>
 
       <div>
         <label for="phone">Phone *</label>
-        <input id="phone" type="tel" required>
+        <input id="phone" name="phone" type="tel" required>
       </div>
 
       <div>
         <label for="address">Address</label>
-        <input id="address" type="text">
+        <input id="address" name="address" type="text">
       </div>
 
       <div class="full">
@@ -267,7 +415,7 @@ input, select{
 
       <div class="full">
         <label for="purpose">Purpose *</label>
-        <select id="purpose" required>
+        <select id="purpose" name="purpose" required>
           <option value="">Select Purpose</option>
           <option>Education</option>
           <option>Women Empowerment</option>
@@ -279,13 +427,13 @@ input, select{
 
       <div class="full">
         <label for="pan">PAN (Optional)</label>
-        <input id="pan" type="text">
+        <input id="pan" name="pan" type="text">
       </div>
 
       <div class="full checkbox-group">
-        <label><input type="checkbox" id="receipt"> Need donation receipt</label>
-        <label><input type="checkbox" id="updates"> Receive updates</label>
-        <label><input type="checkbox" id="consent" required> I agree to the terms *</label>
+        <label><input type="checkbox" name="receipt" id="receipt"> Need donation receipt</label>
+        <label><input type="checkbox" name="updates" id="updates"> Receive updates</label>
+        <label><input type="checkbox" name="consent" id="consent" required> I agree to the terms *</label>
       </div>
 
       <button id="donate-btn" class="full" type="submit">Proceed to Donate</button>
@@ -313,62 +461,118 @@ input, select{
 </main>
 
 <script>
-const API_URL = "https://script.google.com/macros/s/AKfycbwns-CqwnYZaUAajo8oTfaS_ZMiQ9qDHoDkUIDViK8MMeWObD7B2Z_JC6DvNL3GwaezwQ/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbxP3F8bzFjJJ7sUfh3-fc5SMdMFAChemZRRsKGzl_VfjAQqxLPJi8TFOgC0AS8xSrif/exec";
 
-let selectedAmount=null;
-let donorId=null;
+let selectedAmount = null;
+let donorId = null;
 
-const amountBtns=document.querySelectorAll(".amount-btn");
-const customAmount=document.getElementById("customAmount");
+const amountBtns = document.querySelectorAll(".amount-btn");
+const customAmount = document.getElementById("customAmount");
+const donateForm = document.getElementById("donation-form");
+const bankSection = document.getElementById("bank-section");
+const postForm = document.getElementById("postPaymentForm");
 
-amountBtns.forEach(btn=>{
-  btn.onclick=()=>{
-    amountBtns.forEach(b=>b.classList.remove("active"));
+// Checkboxes
+const receipt = document.getElementById("receipt");
+const updates = document.getElementById("updates");
+const consent = document.getElementById("consent");
+
+/* -------- AMOUNT SELECT -------- */
+amountBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    amountBtns.forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
 
-    if(btn.dataset.amount==="other"){
-      customAmount.disabled=false;
-      customAmount.required=true;
-      selectedAmount=null;
-    }else{
-      selectedAmount=Number(btn.dataset.amount);
-      customAmount.disabled=true;
-      customAmount.required=false;
-      customAmount.value="";
+    if (btn.dataset.amount === "other") {
+      customAmount.disabled = false;
+      customAmount.required = true;
+      selectedAmount = null;
+    } else {
+      selectedAmount = Number(btn.dataset.amount);
+      customAmount.disabled = true;
+      customAmount.required = false;
+      customAmount.value = "";
     }
-  };
+  });
 });
 
-document.getElementById("donation-form").onsubmit=async e=>{
+/* -------- PRE DONATION -------- */
+donateForm.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const amount=selectedAmount ?? Number(customAmount.value);
-  if(!amount||amount<=0) return alert("Please select donation amount");
 
-  donorId="AUTI"+Date.now();
-  document.getElementById("donate-btn").disabled=true;
+  const amount = selectedAmount ?? Number(customAmount.value);
+  if (!amount || amount <= 0) {
+    alert("Please select a valid donation amount");
+    return;
+  }
 
-  const fd=new FormData(e.target);
-  fd.append("type","pre");
-  fd.append("id",donorId);
-  fd.append("amount",amount);
-  fd.append("method","Bank Transfer");
+  donorId = "AUTI" + Date.now();
 
-  await fetch(API_URL,{method:"POST",mode:"no-cors",body:fd});
-  document.getElementById("bank-section").style.display="block";
-  document.getElementById("bank-section").scrollIntoView({behavior:"smooth"});
-};
+  const submitBtn = donateForm.querySelector("button[type='submit']");
+  submitBtn.disabled = true;
 
-document.getElementById("postPaymentForm").onsubmit=async e=>{
+  const fd = new FormData(donateForm);
+
+  // ✅ FORCE checkbox values (FIXED)
+  fd.set("receipt", receipt.checked ? "Yes" : "No");
+  fd.set("updates", updates.checked ? "Yes" : "No");
+  fd.set("consent", consent.checked ? "Yes" : "No");
+
+  fd.set("type", "pre");
+  fd.set("id", donorId);
+  fd.set("amount", amount);
+  fd.set("method", "Bank Transfer");
+
+  try {
+    await fetch(API_URL, {
+      method: "POST",
+      body: fd
+    });
+
+    bankSection.style.display = "block";
+    bankSection.scrollIntoView({ behavior: "smooth" });
+
+  } catch (err) {
+    alert("Something went wrong. Please try again.");
+    submitBtn.disabled = false;
+  }
+});
+
+/* -------- POST DONATION -------- */
+postForm.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const fd=new FormData();
-  fd.append("type","post");
-  fd.append("id",donorId);
-  fd.append("txn",document.getElementById("txnId").value);
 
-  await fetch(API_URL,{method:"POST",mode:"no-cors",body:fd});
-  alert("Thank you for supporting Auti Foundation 💚");
-};
+  const txnId = document.getElementById("txnId").value.trim();
+  if (!txnId) {
+    alert("Please enter transaction ID");
+    return;
+  }
+
+  const confirmBtn = postForm.querySelector("button[type='submit']");
+  confirmBtn.disabled = true;
+
+  const fd = new FormData();
+  fd.set("type", "post");
+  fd.set("id", donorId);
+  fd.set("txn", txnId);
+
+  try {
+    await fetch(API_URL, {
+      method: "POST",
+      body: fd
+    });
+
+    alert("Thank you for supporting Auti Foundation 💚");
+
+    donateForm.reset();
+    postForm.reset();
+    bankSection.style.display = "none";
+
+  } catch (err) {
+    alert("Failed to confirm donation");
+    confirmBtn.disabled = false;
+  }
+});
 </script>
-
 </body>
 </html>

@@ -176,15 +176,149 @@ body{
 #lightbox-prev{ left:24px; }
 #lightbox-next{ right:24px; }
 
-/* RESPONSIVE */
-@media(max-width:600px){
-  #gallery-hero{
-    padding:80px 6vw 50px;
+/* =========================
+   GALLERY – RESPONSIVE PATCH
+========================= */
+
+/* -------- LARGE LAPTOPS -------- */
+@media (max-width: 1200px) {
+  #gallery-section {
+    padding: 65px 6vw;
   }
-  #gallery-section{
-    padding:60px 6vw;
+
+  #filter-wrapper {
+    padding: 14px 6vw;
   }
 }
+
+/* -------- TABLETS -------- */
+@media (max-width: 992px) {
+  #gallery-hero {
+    padding: 35px 6vw 55px;
+  }
+
+  #gallery-hero h1 {
+    font-size: clamp(32px, 5vw, 46px);
+  }
+
+  #gallery-hero p {
+    font-size: 16px;
+  }
+
+  #gallery-grid {
+    gap: 24px;
+  }
+
+  .gallery-caption {
+    font-size: 13.5px;
+    padding: 16px;
+  }
+
+  .lightbox-nav {
+    font-size: 42px;
+  }
+}
+
+/* -------- MOBILE DEVICES -------- */
+@media (max-width: 768px) {
+
+  #gallery-hero {
+    padding: 30px 5vw 45px;
+    text-align: center;
+  }
+
+  #gallery-hero p {
+    margin: 0 auto;
+  }
+
+  #gallery-section {
+    padding: 55px 5vw;
+  }
+
+  #gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  #filter-wrapper {
+    justify-content: center;
+    padding: 12px 5vw;
+  }
+
+  .filter-btn {
+    font-size: 13px;
+    padding: 7px 14px;
+  }
+
+  .gallery-caption {
+    opacity: 1;
+    background: linear-gradient(180deg, transparent, rgba(0,0,0,.75));
+  }
+
+  .lightbox-close {
+    font-size: 30px;
+    top: 18px;
+    right: 20px;
+  }
+
+  .lightbox-nav {
+    font-size: 38px;
+  }
+
+  #lightbox-prev { left: 12px; }
+  #lightbox-next { right: 12px; }
+}
+
+/* -------- SMALL MOBILES -------- */
+@media (max-width: 576px) {
+
+  #gallery-hero h1 {
+    font-size: 28px;
+  }
+
+  #gallery-hero p {
+    font-size: 15px;
+  }
+
+  #gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item {
+    border-radius: 14px;
+  }
+
+  .gallery-caption {
+    font-size: 13px;
+    padding: 14px;
+  }
+
+  .lightbox-nav {
+    font-size: 32px;
+  }
+}
+
+/* -------- EXTRA SMALL DEVICES -------- */
+@media (max-width: 420px) {
+
+  #gallery-hero {
+    padding: 26px 16px 40px;
+  }
+
+  #gallery-section {
+    padding: 45px 16px;
+  }
+
+  .filter-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .lightbox-close {
+    font-size: 28px;
+  }
+}
+
 </style>
 </head>
 

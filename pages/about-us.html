@@ -182,19 +182,181 @@ section{
   color:#dff3ec;
 }
 
-/* RESPONSIVE */
-@media(max-width:900px){
-  .story{
-    grid-template-columns:1fr;
+/* =========================
+   ABOUT PAGE – RESPONSIVE PATCH
+========================= */
+
+/* -------- LARGE LAPTOPS -------- */
+@media (max-width: 1200px) {
+  .hero {
+    padding: 120px 6vw 100px;
+  }
+
+  .section {
+    padding: 70px 6vw;
   }
 }
 
-@media(max-width:600px){
-  .hero{
-    padding:100px 6vw 90px;
+/* -------- TABLETS -------- */
+@media (max-width: 992px) {
+
+  .hero h1 {
+    font-size: clamp(36px, 6vw, 54px);
   }
-  .section{
-    padding:80px 6vw;
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .section h2 {
+    font-size: clamp(30px, 4.5vw, 44px);
+  }
+
+  .section p {
+    font-size: 17px;
+  }
+
+  .vm-section {
+    padding: 70px 6vw;
+  }
+
+  .vm-grid {
+    gap: 32px;
+  }
+
+  .vm-card {
+    padding: 60px 32px 38px;
+  }
+}
+
+/* -------- MOBILE DEVICES -------- */
+@media (max-width: 768px) {
+
+  .hero {
+    padding: 100px 5vw 80px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero p {
+    font-size: 16px;
+    margin: 20px auto 0;
+  }
+
+  .section {
+    padding: 60px 5vw;
+  }
+
+  .section h2 {
+    text-align: center;
+  }
+
+  .section p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .vm-card {
+    padding: 56px 26px 34px;
+  }
+
+  .vm-card .icon-box {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .approach-grid {
+    gap: 28px;
+  }
+
+  .approach {
+    padding: 32px 28px;
+  }
+
+  .approach h4 {
+    font-size: 20px;
+  }
+
+  .approach p {
+    font-size: 15.5px;
+  }
+}
+
+/* -------- SMALL MOBILES -------- */
+@media (max-width: 576px) {
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .section h2 {
+    font-size: 26px;
+  }
+
+  .section p {
+    font-size: 15px;
+  }
+
+  .vm-section h2 {
+    font-size: 28px;
+  }
+
+  .vm-card h3 {
+    font-size: 22px;
+  }
+
+  .vm-card p {
+    font-size: 15px;
+  }
+
+  .donation-cta {
+    padding: 80px 6vw;
+  }
+
+  .donation-cta h2 {
+    font-size: 28px;
+  }
+
+  .donation-cta p {
+    font-size: 16px;
+  }
+}
+
+/* -------- EXTRA SMALL DEVICES -------- */
+@media (max-width: 420px) {
+
+  .hero {
+    padding: 90px 16px 70px;
+  }
+
+  .section {
+    padding: 50px 16px;
+  }
+
+  .vm-card {
+    padding: 50px 22px 30px;
+  }
+
+  .approach {
+    padding: 28px 22px;
+  }
+
+  .cta-btn {
+    width: 100%;
+    text-align: center;
   }
 }
 </style>

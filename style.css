@@ -604,8 +604,6 @@ body {
   }
 }
 
-
-
 /* =========================
    INITIATIVES SECTION
 ========================= */
@@ -753,440 +751,6 @@ body {
 .initiative-card:hover .initiative-content button {
   opacity: 1;
 }
-
-/* =========================
-   ANIMATIONS
-========================= */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* =========================
-   ANIMATIONS FOCUS AREAS
-========================= */
-
-@media (max-width: 992px) {
-  .focus-row {
-    flex-wrap: wrap;
-  }
-
-  .focus-card {
-    flex: 1 1 calc(50% - 20px);
-  }
-}
-
-@media (max-width: 576px) {
-  .focus-card {
-    flex: 1 1 100%;
-  }
-}
-
-/* =========================
-   RESPONSIVE – LARGE TABLETS & SMALL DESKTOPS
-========================= */
-@media (max-width: 1200px) {
-  .nav {
-    padding: 0 30px;
-  }
-
-  .overlay h1 {
-    font-size: 40px;
-  }
-
-  .overlay p {
-    font-size: 15px;
-  }
-
-  .slider {
-    height: 480px;
-  }
-}
-
-/* =========================
-   RESPONSIVE – TABLETS
-========================= */
-@media (max-width: 992px) {
-
-  #follower{
-    visibility: hidden;
-  }
-
-  .nav {
-    height: auto;
-    padding: 15px 25px;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .nav-center {
-    gap: 25px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .home-banner {
-    flex-direction: column;
-  }
-
-  .slider {
-    height: 420px;
-  }
-
-  .overlay {
-    padding-left: 40px;
-  }
-
-  .overlay h1 {
-    font-size: 34px;
-  }
-
-  .overlay p {
-    max-width: 420px;
-  }
-
-  .short-info {
-    padding: 60px 40px;
-  }
-
-  .footer-container {
-    flex-wrap: wrap;
-  }
-}
-
-/* =========================
-   RESPONSIVE – MOBILE DEVICES
-========================= */
-@media (max-width: 768px) {
-
-  #follower{
-    visibility: hidden;
-  }
-
-  .nav {
-    padding: 15px 20px;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .nav-left img {
-    height: 55px;
-  }
-
-  .nav-center {
-    gap: 18px;
-  }
-
-  .nav-center a {
-    font-size: 12px;
-  }
-
-  .nav-right {
-    justify-content: center;
-  }
-
-  .slider {
-    height: 350px;
-  }
-
-  .overlay {
-    padding: 20px;
-  }
-
-  .overlay h1 {
-    font-size: 26px;
-    letter-spacing: 2px;
-  }
-
-  .overlay p {
-    font-size: 14px;
-  }
-
-  .donate-btn {
-    padding: 10px 22px;
-    font-size: 13px;
-  }
-
-  .short-info {
-    padding: 50px 25px;
-    text-align: center;
-  }
-
-  .short-info p {
-    text-align: center;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .map-box {
-    height: 180px;
-  }
-}
-
-/* =========================
-   RESPONSIVE – SMALL MOBILES
-========================= */
-@media (max-width: 576px) {
-
-  #follower{
-    visibility: hidden;
-  }
-
-  .slider {
-    height: 280px;
-  }
-
-  .overlay h1 {
-    font-size: 22px;
-  }
-
-  .overlay p {
-    font-size: 13px;
-  }
-
-  .initiative-image {
-    height: 200px;
-  }
-
-  .overlay-title {
-    font-size: 20px;
-  }
-
-  .initiative-content p {
-    font-size: 14px;
-  }
-
-  .initiative-content button {
-    font-size: 16px;
-    padding: 12px;
-  }
-
-  #backToTop {
-    right: 20px;
-    bottom: 20px;
-  }
-}
-
-/* =========================
-   RESPONSIVE – EXTRA SMALL DEVICES
-========================= */
-@media (max-width: 420px) {
-
-  #follower{
-    visibility: hidden;
-  }
-  
-  .nav-center {
-    gap: 12px;
-  }
-
-  .nav-center a {
-    font-size: 11px;
-  }
-
-  .overlay h1 {
-    font-size: 20px;
-  }
-
-  .donate-btn {
-    padding: 8px 18px;
-  }
-
-  .footer {
-    padding: 40px 15px 15px;
-  }
-
-  .footer-bottom {
-    font-size: 0.75rem;
-  }
-}
-
-/* =========================
-   RESPONSIVE – SHORT INFO
-========================= */
-/* Tablets */
-@media (max-width: 992px) {
-  .short-info {
-    padding: 60px 40px;
-  }
-
-  .short-info h1 {
-    font-size: 32px;
-    text-align: center;
-  }
-
-  .short-info p {
-    font-size: 15px;
-    text-align: justify;
-  }
-
-  .short-info a {
-    display: flex;
-    justify-content: center;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .short-info {
-    padding: 50px 25px;
-  }
-
-  .short-info h1 {
-    font-size: 28px;
-    letter-spacing: 1.5px;
-  }
-
-  .short-info p {
-    font-size: 14px;
-    line-height: 1.7;
-    text-align: justify;
-  }
-
-  .short-info button {
-    font-size: 14px;
-    padding: 12px 24px;
-  }
-}
-
-/* Small Mobile */
-@media (max-width: 576px) {
-  .short-info {
-    padding: 40px 18px;
-  }
-
-  .short-info h1 {
-    font-size: 24px;
-  }
-
-  .short-info p {
-    font-size: 13.5px;
-  }
-
-  .short-info button {
-    width: 100%;
-    max-width: 260px;
-  }
-}
-
-/* Extra Small Devices */
-@media (max-width: 420px) {
-  .short-info h1 {
-    font-size: 22px;
-  }
-
-  .short-info p {
-    font-size: 13px;
-  }
-
-  .short-info button {
-    font-size: 13px;
-    padding: 10px 20px;
-  }
-}
-
-/* =========================
-   INITIATIVE – MOBILE FIX
-========================= */
-@media (hover: none) and (pointer: coarse) {
-  .initiative-content p {
-    opacity: 1;
-  }
-
-  .initiative-content button {
-    opacity: 1;
-    position: static;
-    transform: none;
-    width: 100%;
-    margin-top: 15px;
-  }
-
-  .initiative-card:hover .initiative-content p {
-    opacity: 1;
-  }
-
-  .initiative-card:hover .initiative-content button {
-    opacity: 1;
-  }
-}
-
-/* =========================
-   HAMBURGER MENU
-========================= */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.hamburger span {
-  width: 26px;
-  height: 3px;
-  background: white;
-  transition: all 0.3s ease;
-}
-
-/* =========================
-   MOBILE NAVIGATION
-========================= */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .nav {
-    flex-wrap: wrap;
-  }
-
-  .nav-center {
-    width: 100%;
-    flex-direction: column;
-    background: var(--primary);
-    position: absolute;
-    top: 90px;
-    left: 0;
-    padding: 20px 0;
-    gap: 20px;
-    display: none;
-  }
-
-  .nav-center.active {
-    display: flex;
-  }
-
-  .nav-right {
-    display: none;
-  }
-}
-
-/* =========================
-   HAMBURGER ANIMATION
-========================= */
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-
-
-
 
 /* =========================
    FOUNDERS SECTION
@@ -1433,3 +997,680 @@ body {
     display:none;
   }
 }
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   HAMBURGER MENU
+========================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+  }
+
+  .nav-center {
+    width: 100%;
+    flex-direction: column;
+    background: var(--primary);
+    position: absolute;
+    top: 90px;
+    left: 0;
+    padding: 20px 0;
+    gap: 20px;
+    display: none;
+  }
+
+  .nav-center.active {
+    display: flex;
+  }
+
+  .nav-right {
+    display: none;
+  }
+}
+
+/* =========================
+   HAMBURGER ANIMATION
+========================= */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* =========================
+   RESPONSIVE PATCH
+   (Follower + Navbar + Hero)
+========================= */
+
+/* =========================
+   LARGE TABLETS & SMALL LAPTOPS
+========================= */
+@media (max-width: 1200px) {
+  .nav {
+    padding: 0 30px;
+  }
+
+  .slider {
+    height: 480px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(30px, 4.5vw, 46px);
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+}
+
+/* =========================
+   TABLETS
+========================= */
+@media (max-width: 992px) {
+
+  /* Disable follower on touch devices */
+  #follower {
+    display: none;
+  }
+
+  .nav {
+    height: auto;
+    padding: 15px 25px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .nav-center {
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .slider {
+    height: 420px;
+  }
+
+  .overlay {
+    padding-left: 40px;
+  }
+
+  .hero-content {
+    max-width: 520px;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+  }
+}
+
+/* =========================
+   MOBILE DEVICES
+========================= */
+@media (max-width: 768px) {
+
+  #follower {
+    display: none;
+  }
+
+  .nav {
+    padding: 15px 20px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nav-left img {
+    height: 55px;
+  }
+
+  .nav-center {
+    gap: 18px;
+  }
+
+  .nav-center a {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+
+  .nav-right {
+    justify-content: center;
+  }
+
+  .slider {
+    height: 350px;
+  }
+
+  .overlay {
+    padding: 20px;
+  }
+
+  .hero-content {
+    padding: 0;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 26px;
+    letter-spacing: 2px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .donate-btn {
+    padding: 10px 22px;
+    font-size: 13px;
+  }
+}
+
+/* =========================
+   SMALL MOBILES
+========================= */
+@media (max-width: 576px) {
+
+  .slider {
+    height: 280px;
+  }
+
+  .hero-content h1 {
+    font-size: 22px;
+  }
+
+  .hero-content p {
+    font-size: 13px;
+  }
+
+  .donate-btn {
+    padding: 9px 20px;
+    font-size: 12.5px;
+  }
+}
+
+/* =========================
+   EXTRA SMALL DEVICES
+========================= */
+@media (max-width: 420px) {
+
+  .nav-center {
+    gap: 12px;
+  }
+
+  .nav-center a {
+    font-size: 11px;
+  }
+
+  .hero-content h1 {
+    font-size: 20px;
+  }
+
+  .hero-content p {
+    font-size: 12.5px;
+  }
+}
+
+/* =========================
+   SHORT INFO – RESPONSIVE FIX
+========================= */
+@media (max-width: 992px) {
+  .short-info {
+    padding: 60px 40px;
+    text-align: center;
+  }
+
+  .short-info h1 {
+    font-size: 32px;
+  }
+
+  .short-info p {
+    text-align: justify;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .short-info {
+    padding: 50px 25px;
+  }
+
+  .short-info h1 {
+    font-size: 28px;
+    letter-spacing: 1.5px;
+  }
+
+  .short-info p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .short-info button {
+    font-size: 14px;
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .short-info {
+    padding: 40px 18px;
+  }
+
+  .short-info h1 {
+    font-size: 24px;
+  }
+
+  .short-info p {
+    font-size: 13.5px;
+  }
+
+  .short-info button {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+/* =========================
+   FOOTER – RESPONSIVE FIX
+========================= */
+@media (max-width: 992px) {
+  .footer-container {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .feedback-box {
+    flex-direction: column;
+  }
+
+  .map-box {
+    height: 180px;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    padding: 40px 15px 15px;
+  }
+
+  .footer-bottom {
+    font-size: 0.75rem;
+  }
+
+  #backToTop {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+/* =========================
+   CORE FOCUS – RESPONSIVE FIX
+   (IMPORTANT SECTION)
+========================= */
+
+/* Tablets */
+@media (max-width: 1100px) {
+  .core-focus-wrapper {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 50px;
+  }
+
+  .focus-circle {
+    grid-column: 1 / -1;
+    width: 360px;
+    height: 360px;
+  }
+
+  .focus-col {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .core-focus-section {
+    padding: 60px 20px;
+  }
+
+  .core-focus-wrapper {
+    grid-template-columns: 1fr !important;
+    gap: 40px;
+  }
+
+  .focus-circle {
+    width: 260px;
+    height: 260px;
+  }
+
+  .circle-text {
+    inset: 25px;
+  }
+
+  .circle-text h3 {
+    font-size: 24px;
+  }
+
+  .num {
+    margin: 0 auto 10px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 576px) {
+  .focus-circle {
+    width: 220px;
+    height: 220px;
+  }
+
+  .focus-item h3 {
+    font-size: 18px;
+  }
+
+  .focus-item p {
+    font-size: 14px;
+  }
+
+  .circle-text h3 {
+    font-size: 20px;
+  }
+
+  .environment-block {
+    margin-top: 50px;
+    padding: 0 10px;
+  }
+
+  .environment-block h3 {
+    font-size: 20px;
+  }
+
+  .environment-block p {
+    font-size: 14px;
+  }
+}
+
+/* =========================
+   INITIATIVES – RESPONSIVE FIX
+========================= */
+
+/* Large Tablets & Small Laptops */
+@media (max-width: 1200px) {
+  .initiatives-section {
+    padding: 70px 20px;
+  }
+
+  .overlay-title {
+    font-size: 24px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  .initiatives-grid {
+    gap: 25px;
+  }
+
+  .initiative-image {
+    height: 240px;
+  }
+
+  .overlay-title {
+    font-size: 22px;
+  }
+
+  .initiative-content button {
+    font-size: 18px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .initiatives-section {
+    padding: 60px 16px;
+  }
+
+  .initiative-card {
+    transform: none;
+  }
+
+  .initiative-image {
+    height: 220px;
+  }
+
+  .overlay-title {
+    font-size: 20px;
+  }
+
+  .initiative-content p {
+    font-size: 14px;
+  }
+
+  .initiative-content button {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+/* Small Mobiles */
+@media (max-width: 576px) {
+  .initiative-image {
+    height: 200px;
+  }
+
+  .overlay-title {
+    font-size: 18px;
+  }
+
+  .initiative-content p {
+    font-size: 13.5px;
+  }
+
+  .initiative-content button {
+    font-size: 15px;
+  }
+}
+
+/* =========================
+   TOUCH DEVICES FIX
+========================= */
+@media (hover: none) and (pointer: coarse) {
+  .initiative-content p {
+    opacity: 1 !important;
+  }
+
+  .initiative-content button {
+    opacity: 1 !important;
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .initiative-card:hover .initiative-content p,
+  .initiative-card:hover .initiative-content button {
+    opacity: 1;
+  }
+}
+
+/* =========================
+   FOUNDERS – RESPONSIVE FIX
+========================= */
+
+/* Large Tablets */
+@media (max-width: 1200px) {
+  .founder-row {
+    gap: 60px;
+    padding: 70px 6vw;
+  }
+
+  .founder-name {
+    font-size: 32px;
+  }
+
+  .founder-quote {
+    font-size: 18px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  .founders-title {
+    font-size: 32px;
+  }
+
+  .founders-subtitle {
+    font-size: 15.5px;
+  }
+
+  .founder-row,
+  .founder-row.reverse {
+    grid-template-columns: 1fr;
+    gap: 55px;
+    text-align: center;
+  }
+
+  .founder-text {
+    max-width: 100%;
+  }
+
+  .quote-mark {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100px;
+    font-size: 100px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .founders-title-wrap {
+    padding: 60px 6vw 30px;
+  }
+
+  .founder-name {
+    font-size: 28px;
+  }
+
+  .founder-role {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .founder-quote {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .founder-desc {
+    font-size: 15px;
+  }
+
+  .founder-photo img {
+    width: 260px;
+  }
+}
+
+/* Small Mobiles */
+@media (max-width: 576px) {
+  .founder-row {
+    padding: 60px 5vw;
+    gap: 45px;
+  }
+
+  .founder-name {
+    font-size: 24px;
+  }
+
+  .founder-quote {
+    font-size: 15px;
+  }
+
+  .founder-desc {
+    font-size: 14px;
+  }
+
+  .founder-photo img {
+    width: 220px;
+  }
+
+  .quote-mark {
+    font-size: 80px;
+    top: 90px;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 420px) {
+  .founder-name {
+    font-size: 22px;
+  }
+
+  .founder-photo img {
+    width: 200px;
+  }
+
+  .founder-role {
+    font-size: 13px;
+  }
+}
+
+
+
+
+
+
